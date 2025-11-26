@@ -9,10 +9,26 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
 
-    <!-- Fonts (Example: Google Fonts) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Rudra_">
+    <meta name="description" content="Rudra - ÔÇô Multipurpose Professional Consulting Html Template">
+    <title>Rudra - ÔÇô Multipurpose Professional Consulting Html Template</title>
+    <link rel="shortcut icon" href="assets/img/favicon.html">
+
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/all.min.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/animate.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/meanmenu.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/nice-select.css">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/flaticon.css">
+    <link href="https://rudra-tailwind.vercel.app/assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/src/output.css">
+
+
 
     <!-- Tailwind CSS via Vite -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -51,4 +67,26 @@
 </html>
 
 </body>
+
+<script src="assets/js/jquery-3.7.1.min.js"></script>
+<!--<< Viewport Js >>-->
+<script src="assets/js/viewport.jquery.js"></script>
+
+<!--<< Nice Select Js >>-->
+<script src="assets/js/jquery.nice-select.min.js"></script>
+<!--<< Waypoints Js >>-->
+<script src="assets/js/jquery.waypoints.js"></script>
+<!--<< Counterup Js >>-->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!--<< Swiper Slider Js >>-->
+<script src="assets/js/swiper-bundle.min.js"></script>
+<!--<< MeanMenu Js >>-->
+<script src="assets/js/jquery.meanmenu.min.js"></script>
+<!--<< Magnific Popup Js >>-->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!--<< Wow Animation Js >>-->
+<script src="assets/js/wow.min.js"></script>
+<!--<< Main.js >>-->
+<script src="assets/js/main.js"></script>
+<script src="assets/js/accordion.js"></script>
 </html>
