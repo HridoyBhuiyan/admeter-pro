@@ -9,7 +9,7 @@
 
 @section('content')
     <!-- Hero Section -->
-    <main>
+    <main class="bg-white">
         <!-- BANNER SECTION START -->
         <div class="banner-section relative overflow-hidden  bg-[position:50%_0%] bg-no-repeat bg-cover rounded-[20px] m-[11px] px-0 pt-[clamp(180px,12.61vw,240px)] xxs:pt-[130px] pb-[clamp(240px,14.71vw,280px)] xxs:pb-[180px]"
              style="background-image: url('https://rudra-tailwind.vercel.app/assets/img/banner/hero-thumb2.png');"
@@ -158,7 +158,7 @@
         <!-- SERVICES SECTION START -->
         <section class="service-section py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
-                <div class="grid grid-cols-12 gap-[clamp(16px,1.26vw,24px)] items-end mb-[clamp(20px,2.10vw,40px)]">
+                <div class="!grid !grid-cols-12 gap-[clamp(16px,1.26vw,24px)] items-end mb-[clamp(20px,2.10vw,40px)]">
                     <div class="col-span-7 sm:col-span-12">
                         <div class="section-header">
                             <span class="et-2-section-sub-title">Services</span>
@@ -183,7 +183,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[clamp(18px,1.26vw,24px)]">
+                <div class="grid !grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[clamp(18px,1.26vw,24px)]">
                     <div class="col">
                         <div class="service-items2 block rounded-[16px] bg-etWhite relative text-primary px-[clamp(16px,1.89vw,36px)] py-[clamp(32px,3.36vw,64px)] overflow-hidden group duration-300 hover:bg-et2primary">
                             <img src="https://rudra-tailwind.vercel.app/assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
@@ -288,7 +288,7 @@
         <!--- WORK SECTION START -->
         <section class="work-section fix bg-etWhite py-[clamp(60px,5.25vw,100px)] overflow-hidden">
             <div class="et-container">
-                <div class="grid grid-cols-2 md:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
+                <div class="grid !grid-cols-2 md:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
                     <div class="col-lg-6">
                         <div class="section-header mb-[clamp(20px,2.10vw,40px)]">
                             <span class="et-2-section-sub-title">Why wrok with me</span>
@@ -406,7 +406,7 @@
         <!-- TESTIMONIAL 2.0 SECTION START -->
         <section class="testimonial-section2 overflow-hidden py-[clamp(40px,5.25vw,100px)]">
             <div class="et-container">
-                <div class="grid grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
+                <div class="grid !grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
                     <div class="col-span-4 md:col-span-6 xxs:col-span-12">
                         <div class="section-header">
                             <span class="et-2-section-sub-title">Testimonials</span>
@@ -767,7 +767,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
+                <div class="grid !grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-items2 bg-etWhite rounded-2xl p-[clamp(15px,1.26vw,24px)] relative duration-300 z-[1] hover:bg-[#2e8c57] group">
                             <a href="blog-details.html" class="thumb rounded-2xl mb-[clamp(15px,1.26vw,24px)] overflow-hidden block">
@@ -834,7 +834,9 @@
                             <span class="fw-300">Life you deserve?</span>
                         </h2>
                         <a href="contact.html" class="et-btn et-2-btn">
-                            <span class="icon"><i class="fa-solid fa-arrow-right"></i></span>
+                            <span class="icon">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
                             Schedule Your Free Consultation
                         </a>
                     </div>

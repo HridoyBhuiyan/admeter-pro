@@ -15,29 +15,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Rudra_">
     <meta name="description" content="Rudra - ÔÇô Multipurpose Professional Consulting Html Template">
-    <title>Rudra - ÔÇô Multipurpose Professional Consulting Html Template</title>
+    <title>Rudra - Multipurpose Professional Consulting Html Template</title>
     <link rel="shortcut icon" href="assets/img/favicon.html">
 
-{{--    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/all.min.css">--}}
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/animate.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/meanmenu.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/nice-select.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/flaticon.css">
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/src/output.css">
-    <link href="https://rudra-tailwind.vercel.app/assets/css/style.css" rel="stylesheet">
+
+    @vite(['resources/css/client-side/client-page.css'])
+
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/swiper-bundle.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/all.min.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}"/>
 
 
 
-    <!-- Tailwind CSS via Vite -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-
-    <!-- Alpine.js (optional, if you use dropdowns in header/footer) -->
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-
-    <!-- Custom CSS Stack (for page-specific styles) -->
     @stack('styles')
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
 <body class="font-sans antialiased text-gray-900 bg-gray-50">
