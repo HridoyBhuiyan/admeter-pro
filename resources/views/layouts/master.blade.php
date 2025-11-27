@@ -18,15 +18,15 @@
     <title>Rudra - ÔÇô Multipurpose Professional Consulting Html Template</title>
     <link rel="shortcut icon" href="assets/img/favicon.html">
 
-    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/all.min.css">
+{{--    <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/all.min.css">--}}
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/animate.css">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/magnific-popup.css">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/meanmenu.css">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/nice-select.css">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/assets/css/flaticon.css">
-    <link href="https://rudra-tailwind.vercel.app/assets/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://rudra-tailwind.vercel.app/src/output.css">
+    <link href="https://rudra-tailwind.vercel.app/assets/css/style.css" rel="stylesheet">
 
 
 

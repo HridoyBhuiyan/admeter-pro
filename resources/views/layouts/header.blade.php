@@ -5,7 +5,7 @@
                 <div class="offcanvas__top mb-[clamp(16px,1.26vw,24px)] flex justify-between items-center">
                     <div class="offcanvas__logo">
                         <a href="index.html">
-                            <img src="assets/img/logo/logo.png" alt="logo-img">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo.png" alt="logo-img">
                         </a>
                     </div>
                     <div class="offcanvas__close">
@@ -84,7 +84,7 @@
                 <div class="header-left">
                     <div class="logo">
                         <a href="index.html" class="header-logo">
-                            <img src="assets/img/logo/logo-lihgt.png" alt="logo-img">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo-lihgt.png" alt="logo-img">
                         </a>
                     </div>
                 </div>
@@ -102,7 +102,7 @@
                                                 <div class="homemenu-items">
                                                     <div class="homemenu">
                                                         <div class="homemenu-thumb">
-                                                            <img src="assets/img/banner/home1.png" alt="img">
+                                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/home1.png" alt="img">
                                                             <div class="demo-button">
                                                                 <a href="index.html" class="et-btn before:rounded-none !text-center bg-et3primary !text-white">
                                                                     <span>Home 01</span>
@@ -117,7 +117,7 @@
                                                     </div>
                                                     <div class="homemenu">
                                                         <div class="homemenu-thumb">
-                                                            <img src="assets/img/banner/home2.png" alt="img">
+                                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/home2.png" alt="img">
                                                             <div class="demo-button">
                                                                 <a href="index-2.html" class="et-btn before:rounded-none !text-center bg-et3primary !text-white">
                                                                     <span>Home 02</span>
@@ -132,7 +132,7 @@
                                                     </div>
                                                     <div class="homemenu">
                                                         <div class="homemenu-thumb">
-                                                            <img src="assets/img/banner/home3.png" alt="img">
+                                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/home3.png" alt="img">
                                                             <div class="demo-button">
                                                                 <a href="index-3.html" class="et-btn before:rounded-none !text-center bg-et3primary !text-white">
                                                                     <span>Home 03</span>
@@ -207,7 +207,7 @@
                         </a>
                         <div class="header__hamburger hidden lg:block my-auto">
                             <div class="sidebar__toggle bars-white">
-                                <img src="assets/img/icon/bars.png" alt="icon">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/icon/bars.png" alt="icon">
                             </div>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                     </a>
                     <div class="header__hamburger my-auto hidden lg:block">
                         <div class="sidebar__toggle">
-                            <img src="assets/img/icon/bars.png" alt="icon">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/icon/bars.png" alt="icon">
                         </div>
                     </div>
                 </div>

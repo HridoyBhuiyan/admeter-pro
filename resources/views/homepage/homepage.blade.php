@@ -27,7 +27,7 @@
                         Get Started Today
                     </a>
                 </div>
-                <img src="assets/img/banner/collapse-thumb2.png" alt="img" class="absolute -bottom-[clamp(125px,12.61vw,240px)] right-0 lg:right-[15px] z-[1] xxs:hidden">
+                <img src="https://rudra-tailwind.vercel.app/assets/img/banner/collapse-thumb2.png" alt="img" class="absolute -bottom-[clamp(125px,12.61vw,240px)] right-0 lg:right-[15px] z-[1] xxs:hidden">
             </div>
             <!-- Sponsor -->
             <div class="sponsor-section absolute bottom-0 left-0 right-0 backdrop-blur-[25px] bg-white/17 rounded-b-[16px] px-0 py-[12px]">
@@ -38,27 +38,27 @@
                                 <div class="swiper-wrapper items-center">
                                     <div class="swiper-slide">
                                         <div class="sponsor-item">
-                                            <img src="assets/img/banner/sponsor1.png" alt="img">
+                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/sponsor3.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="sponsor-item">
-                                            <img src="assets/img/banner/sponsor2.png" alt="img">
+                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/sponsor4.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="sponsor-item">
-                                            <img src="assets/img/banner/sponsor3.png" alt="img">
+                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/sponsor1.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="sponsor-item">
-                                            <img src="assets/img/banner/sponsor4.png" alt="img">
+                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/sponsor2.png" alt="img">
                                         </div>
                                     </div>
                                     <div class="swiper-slide">
                                         <div class="sponsor-item">
-                                            <img src="assets/img/banner/sponsor5.png" alt="img">
+                                            <img src="https://rudra-tailwind.vercel.app/assets/img/banner/sponsor5.png" alt="img">
                                         </div>
                                     </div>
                                 </div>
@@ -74,30 +74,30 @@
         <!-- About-section Start -->
         <section class="about-section bg-etWhite py-[clamp(60px,5.25vw,100px)] overflow-hidden">
             <div class="et-container">
-                <div class="grid grid-cols-12 gap-y-[10px] items-end">
-                    <div class="col-span-5 md:col-span-12">
+                <div class="grid !grid-cols-12 gap-y-[10px] items-end">
+                    <div class="!col-span-5 md:col-span-12">
                         <div class="about-thumb2 relative">
                             <div class="absolute w-[clamp(161px,8.62vw,164px)] aspect-square -right-[60px] -top-[clamp(80px,5.78vw,110px)] md:right-[15px] md:top-[15px] z-[1] xs:hidden backdrop-blur-[12.9474px] bg-white/65 rounded-full fill-white/65">
-                                <img src="assets/img/service/text-circle.png" alt="img" class="circle360 absolute rounded-full fill-white/65 animate-[circle360_10s_linear_infinite] [transform:translate(-50%,-50%)] top-1/2 left-1/2">
-                                <img src="assets/img/service/txt-tumb.png" alt="img" class="shapee absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/service/text-circle.png" alt="img" class="circle360 absolute rounded-full fill-white/65 animate-[circle360_10s_linear_infinite] [transform:translate(-50%,-50%)] top-1/2 left-1/2">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/service/txt-tumb.png" alt="img" class="shapee absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
                             </div>
 
-                            <div class="about-image wow img-custom-anim-right w-full" data-wow-duration="1.3s" data-wow-delay="0.3s">
-                                <img src="assets/img/about/about-thumb2.png" alt="img" class="w-full">
+                            <div class="about-image wow img-custom-anim-right w-full animated" data-wow-duration="1.3s" data-wow-delay="0.3s" style="visibility: visible; animation-duration: 1.3s; animation-delay: 0.3s;">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/about/about-thumb2.png" alt="img" class="w-full">
                             </div>
-                            <img src="assets/img/about/signature.png" alt="img" class="absolute bottom-0 left-0 m-[clamp(16px,1.26vw,24px)]">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/about/signature.png" alt="img" class="absolute bottom-0 left-0 m-[clamp(16px,1.26vw,24px)]">
                         </div>
                     </div>
 
                     <div></div>
 
-                    <div class="col-span-6 md:col-span-12">
+                    <div class="!col-span-6 !md:col-span-12">
                         <div class="about-content">
                             <div class="flex flex-nowrap xs:flex-wrap gap-[clamp(5px,0.42vw,8px)] gap-y-[15px] justify-between mb-[clamp(24px,2.52vw,48px)]">
                                 <div class="boxes max-w-[clamp(327px,17.34vw,330px)]">
                                     <div class="section-title">
                                         <span class="et-2-section-sub-title">ABOUT US</span>
-                                        <h2 class="et-section-title wow fadeInUp" data-wow-delay=".3s">
+                                        <h2 class="et-section-title wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                                             Empowering you to
                                             <span class="fw-300">achieve a life you love</span>
                                         </h2>
@@ -105,13 +105,13 @@
                                 </div>
                                 <div class="counter-area shrink-0">
                                     <div class="flex flex-col gap-[clamp(16px,1.26vw,24px)]">
-                                        <div class="wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                                             <h2 class="border-b border-[#DEE2E6] text-primary text-[clamp(25px,2.52vw,48px)] font-light leading-[1.1] mb-[clamp(9px,0.84vw,16px)] pb-2"><span class="count fw-300">10</span>+</h2>
                                             <p class="text-[15px] leading-[1.5] text-primary">
                                                 01. Years of Experience
                                             </p>
                                         </div>
-                                        <div class="wow fadeInUp" data-wow-delay=".3s">
+                                        <div class="wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                                             <h2 class="border-b border-[#DEE2E6] text-primary text-[clamp(25px,2.52vw,48px)] font-light leading-[1.1] mb-[clamp(9px,0.84vw,16px)] pb-2"><span class="count fw-300">240</span>+</h2>
                                             <p class="text-[15px] leading-[1.5] text-primary">
                                                 02. Successful projects
@@ -122,7 +122,7 @@
                             </div>
                             <div class="flex flex-nowrap xs:flex-wrap gap-[clamp(5px,0.42vw,8px)] gap-y-[15px] justify-between items-end">
                                 <div class="boxes max-w-[clamp(327px,17.34vw,330px)]">
-                                    <p class="text-primary text-[15px] leading-[1.5] mb-2 wow fadeInUp" data-wow-delay=".3s">
+                                    <p class="text-primary text-[15px] leading-[1.5] mb-2 wow fadeInUp" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeInUp;">
                                         Hi, I’m Michel jhon, and I'm passionate about helping people break free from
                                         self-doubt
                                         and step into the life they
@@ -132,14 +132,14 @@
                                     <p class="text-primary text-[15px] leading-[1.5] mb-[clamp(24px,2.52vw,48px)]">
                                         Let’s create the life you’ve been dreaming
                                     </p>
-                                    <a href="about.html" class="et-btn et-2-btn wow fadeIn" data-wow-delay=".4s">
+                                    <a href="about.html" class="et-btn et-2-btn wow fadeIn" data-wow-delay=".4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
                                         <span class="icon"><i class="fa-solid fa-arrow-right"></i></span> Starting Now </a>
                                 </div>
                                 <div class="counter-area min-w-[clamp(168px,8.99vw,171px)]">
                                     <div class="flex satisfied mb-[clamp(10px,0.84vw,16px)] *:-ml-[clamp(8px,0.74vw,14px)] *:first:ml-0 *:rounded-full">
-                                        <img src="assets/img/about/satisfied-member1.png" alt="img" class="rounded-circle">
-                                        <img src="assets/img/about/satisfied-member2.png" alt="img" class="rounded-circle">
-                                        <img src="assets/img/about/satisfied-member3.png" alt="img" class="rounded-circle">
+                                        <img src="https://rudra-tailwind.vercel.app/assets/img/about/satisfied-member1.png" alt="img" class="rounded-circle">
+                                        <img src="https://rudra-tailwind.vercel.app/assets/img/about/satisfied-member2.png" alt="img" class="rounded-circle">
+                                        <img src="https://rudra-tailwind.vercel.app/assets/img/about/satisfied-member3.png" alt="img" class="rounded-circle">
                                     </div>
                                     <div>
                                         <h5 class="text-primary text-[clamp(16px,0.95vw,18px)] font-bold leading-[1.2] mb-1">Join 5,000+</h5>
@@ -186,7 +186,7 @@
                 <div class="grid grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xxs:grid-cols-1 gap-[clamp(18px,1.26vw,24px)]">
                     <div class="col">
                         <div class="service-items2 block rounded-[16px] bg-etWhite relative text-primary px-[clamp(16px,1.89vw,36px)] py-[clamp(32px,3.36vw,64px)] overflow-hidden group duration-300 hover:bg-et2primary">
-                            <img src="assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
                             <div class="content">
                                 <div class="flex items-center justify-center bg-white rounded-full mb-[48px] icons w-[clamp(46px,2.94vw,56px)] aspect-square">
                                     <svg width="18" height="22" viewBox="0 0 18 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -210,7 +210,7 @@
 
                     <div class="col">
                         <div class="service-items2 block rounded-[16px] bg-etWhite relative text-primary px-[clamp(16px,1.89vw,36px)] py-[clamp(32px,3.36vw,64px)] overflow-hidden group duration-300 hover:bg-et2primary">
-                            <img src="assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
                             <div class="content">
                                 <div class="flex items-center justify-center bg-white rounded-full mb-[48px] icons w-[clamp(46px,2.94vw,56px)] aspect-square">
                                     <svg width="16" height="23" viewBox="0 0 16 23" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -234,7 +234,7 @@
 
                     <div class="col">
                         <div class="service-items2 block rounded-[16px] bg-etWhite relative text-primary px-[clamp(16px,1.89vw,36px)] py-[clamp(32px,3.36vw,64px)] overflow-hidden group duration-300 hover:bg-et2primary">
-                            <img src="assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
                             <div class="content">
                                 <div class="flex items-center justify-center bg-white rounded-full mb-[48px] icons w-[clamp(46px,2.94vw,56px)] aspect-square">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -258,7 +258,7 @@
 
                     <div class="col">
                         <div class="service-items2 block rounded-[16px] bg-etWhite relative text-primary px-[clamp(16px,1.89vw,36px)] py-[clamp(32px,3.36vw,64px)] overflow-hidden group duration-300 hover:bg-et2primary">
-                            <img src="assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/element/hover-ele.png" alt="img" class="-right-[100%] absolute bottom-0 z-n1 opacity-0 group-hover:right-0 group-hover:opacity-100 transition-all duration-300">
                             <div class="content">
                                 <div class="flex items-center justify-center bg-white rounded-full mb-[48px] icons w-[clamp(46px,2.94vw,56px)] aspect-square">
                                     <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -296,7 +296,7 @@
                             <p class="text-[15px] text-primary font-normal leading-[1.5]">Choosing the right coach is a big decision. That’s why we go beyond traditional coaching methods — offering you a supportive, personalized, and empowering experience designed to spark real, lasting change.</p>
                         </div>
                         <div class="nano-project-image relative w-full">
-                            <img src="assets/img/about/about-thumb2.png" alt="img" class="rounded-lg w-full">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/about/about-thumb2.png" alt="img" class="rounded-lg w-full">
                             <div class="video w-[clamp(65px,4.20vw,80px)] aspect-square flex items-center justify-center absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-full">
                                 <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn video-popup">
                                     <svg width="26" height="31" viewBox="0 0 26 31" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -414,13 +414,13 @@
                                 Life-Changing Journeys,
                                 <span class="fw-300">Told by Our Clients</span>
                             </h2>
-                            <img src="assets/img/testimonial/quote2.png" alt="img">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/testimonial/quote2.png" alt="img">
                         </div>
                     </div>
 
                     <div class="col-span-3 md:col-span-6 xxs:col-span-12">
                         <div class="thumb w-full rounded-lg img-custom-anim-right overflow-hidden">
-                            <img src="assets/img/testimonial/testimonial-big1.png" alt="img" class="rounded-lg w-full">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/testimonial/testimonial-big1.png" alt="img" class="rounded-lg w-full">
                         </div>
                     </div>
 
@@ -562,7 +562,7 @@
                                     Full Email + Call Support
                                 </li>
                             </ul>
-                            <img src="assets/img/element/popular-badge.png" alt="img" class="popular-badge absolute top-0 right-0">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/element/popular-badge.png" alt="img" class="popular-badge absolute top-0 right-0">
                         </div>
                     </div>
                     <div class="col">
@@ -771,7 +771,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-items2 bg-etWhite rounded-2xl p-[clamp(15px,1.26vw,24px)] relative duration-300 z-[1] hover:bg-[#2e8c57] group">
                             <a href="blog-details.html" class="thumb rounded-2xl mb-[clamp(15px,1.26vw,24px)] overflow-hidden block">
-                                <img src="assets/img/blog/blog-grid1.png" class="w-full group-hover:scale-110 duration-300" alt="img">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/blog/blog-grid1.png" class="w-full group-hover:scale-110 duration-300" alt="img">
                             </a>
                             <div class="content">
                                 <span class="inline-block border border-primary group-hover:border-white rounded-[32px] text-primary group-hover:text-white text-[14px] font-medium tracking-[1px] leading-[1.5] mb-[clamp(10px,0.84vw,16px)] px-[clamp(10px,0.84vw,16px)] uppercase transition-[all_0.4s_ease-in-out]">Financial</span>
@@ -787,7 +787,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-items2 bg-etWhite rounded-2xl p-[clamp(15px,1.26vw,24px)] relative duration-300 z-[1] hover:bg-[#2e8c57] group">
                             <a href="blog-details.html" class="thumb rounded-2xl mb-[clamp(15px,1.26vw,24px)] overflow-hidden block">
-                                <img src="assets/img/blog/blog-grid2.png" class="w-full group-hover:scale-110 duration-300" alt="img">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/blog/blog-grid2.png" class="w-full group-hover:scale-110 duration-300" alt="img">
                             </a>
                             <div class="content">
                                 <span class="inline-block border border-primary group-hover:border-white rounded-[32px] text-primary group-hover:text-white text-[14px] font-medium tracking-[1px] leading-[1.5] mb-[clamp(10px,0.84vw,16px)] px-[clamp(10px,0.84vw,16px)] uppercase transition-[all_0.4s_ease-in-out]">Financial</span>
@@ -803,7 +803,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="blog-items2 bg-etWhite rounded-2xl p-[clamp(15px,1.26vw,24px)] relative duration-300 z-[1] hover:bg-[#2e8c57] group">
                             <a href="blog-details.html" class="thumb rounded-2xl mb-[clamp(15px,1.26vw,24px)] overflow-hidden block">
-                                <img src="assets/img/blog/blog-grid3.png" class="w-full group-hover:scale-110 duration-300" alt="img">
+                                <img src="https://rudra-tailwind.vercel.app/assets/img/blog/blog-grid3.png" class="w-full group-hover:scale-110 duration-300" alt="img">
                             </a>
                             <div class="content">
                                 <span class="inline-block border border-primary group-hover:border-white rounded-[32px] text-primary group-hover:text-white text-[14px] font-medium tracking-[1px] leading-[1.5] mb-[clamp(10px,0.84vw,16px)] px-[clamp(10px,0.84vw,16px)] uppercase transition-[all_0.4s_ease-in-out]">Financial</span>
@@ -846,7 +846,7 @@
                         <div class="col-span-4 sm:col-span-12">
                             <div>
                                 <div class="footer-logo max-w-[clamp(160px,9.46vw,180px)] mb-[clamp(16px,1.26vw,24px)] sm:mx-auto">
-                                    <img src="assets/img/logo/logo-theme2.png" alt="img">
+                                    <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo-theme2.png" alt="img">
                                 </div>
                                 <p class="text-white text-[14px] leading-[1.1]">&copy; 2025 Rudra, Inc.</p>
                             </div>

@@ -2,7 +2,7 @@
     <div class="et-container">
         <div class="grid grid-cols-12 items-center">
             <div class="col-span-3 md:hidden">
-                <img src="assets/img/element/footer-rudra.png" alt="img">
+                <img src="https://rudra-tailwind.vercel.app/assets/img/element/footer-rudra.png" alt="img">
             </div>
             <div class="col-span-9 md:col-span-12">
                 <div class="footer-inner2 max-w-full flex items-center flex-wrap justify-between gap-[clamp(10px,0.84vw,16px)] gap-y-[35px] px-[clamp(10px,0.84vw,16px)] py-[clamp(30px,3.15vw,60px)]">
@@ -74,7 +74,7 @@
                         </li>
                     </ul>
                     <div class="payment-thumb">
-                        <img src="assets/img/footer/footer-payment.png" alt="img">
+                        <img src="https://rudra-tailwind.vercel.app/assets/img/footer/footer-payment.png" alt="img">
                     </div>
                 </div>
             </div>
