@@ -28,7 +28,6 @@
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}"/>
 
-    @vite(['resources/css/app.css'])
     @vite(['resources/css/client-side/client-page.css'])
 
 
