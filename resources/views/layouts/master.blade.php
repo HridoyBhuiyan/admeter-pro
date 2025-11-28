@@ -19,8 +19,6 @@
     <link rel="shortcut icon" href="assets/img/favicon.html">
 
 
-{{--    @vite(['resources/css/client-side/client-page.css'])--}}
-
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/flaticon.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/nice-select.css') }}"/>
@@ -29,8 +27,9 @@
     <link rel="stylesheet" href="{{ asset('assets/css/meanmenu.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}"/>
     <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}"/>
-    <link rel="stylesheet" href="{{ asset('assets/css/client-page.css') }}"/>
 
+    @vite(['resources/css/app.css'])
+    @vite(['resources/css/client-side/client-page.css'])
 
 
     @stack('styles')
