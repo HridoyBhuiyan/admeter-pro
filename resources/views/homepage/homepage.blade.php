@@ -406,7 +406,7 @@
         <!-- TESTIMONIAL 2.0 SECTION START -->
         <section class="testimonial-section2 overflow-hidden py-[clamp(40px,5.25vw,100px)]">
             <div class="et-container">
-                <div class="grid !grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
+                <div class="!grid !grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
                     <div class="col-span-4 md:col-span-6 xxs:col-span-12">
                         <div class="section-header">
                             <span class="et-2-section-sub-title">Testimonials</span>
