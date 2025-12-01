@@ -407,7 +407,7 @@
         <section class="testimonial-section2 overflow-hidden py-[clamp(40px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="!grid !grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
-                    <div class="col-span-4 md:col-span-6 xxs:col-span-12">
+                    <div class="!col-span-4 md:col-span-6 xxs:col-span-12">
                         <div class="section-header">
                             <span class="et-2-section-sub-title">Testimonials</span>
                             <h2 class="et-section-title wow fadeInUp mb-[clamp(16px,1.26vw,24px)]" data-wow-delay=".3s">
@@ -418,13 +418,13 @@
                         </div>
                     </div>
 
-                    <div class="col-span-3 md:col-span-6 xxs:col-span-12">
+                    <div class="!col-span-3 md:col-span-6 xxs:col-span-12">
                         <div class="thumb w-full rounded-lg img-custom-anim-right overflow-hidden">
                             <img src="https://rudra-tailwind.vercel.app/assets/img/testimonial/testimonial-big1.png" alt="img" class="rounded-lg w-full">
                         </div>
                     </div>
 
-                    <div class="col-span-5 md:col-span-12 relative">
+                    <div class="!col-span-5 !md:col-span-12 relative">
                         <div class="swiper testimonial-slider1">
                             <div class="swiper-wrapper">
                                 <div class="swiper-slide">
@@ -491,7 +491,7 @@
                     </div>
                 </div>
 
-                <div class="grid grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
+                <div class="grid !grid-cols-3 md:grid-cols-2 xs:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
                     <div class="col">
                         <div class="pricing-plan-items pricing-plan-items2 relative rounded-[8px] bg-white/5 border border-white/16 overflow-hidden px-[clamp(20px,2.10vw,40px)] py-[clamp(28px,2.94vw,56px)] wow fadeInUp" data-wow-delay=".2s">
                             <div class="mb-[clamp(16px,1.26vw,24px)]">
@@ -610,8 +610,8 @@
         <!-- FAQ 02 START -->
         <section class="faq-section02 overflow-hidden bg-etWhite py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
-                <div class="grid grid-cols-12 gap-[clamp(16px,1.26vw,24px)]">
-                    <div class="col-span-5 md:col-span-12">
+                <div class="!grid !grid-cols-12 gap-[clamp(16px,1.26vw,24px)]">
+                    <div class="!col-span-5 !md:col-span-12">
                         <div class="faq-content2">
                             <div class="section-title">
                                 <span class="et-2-section-sub-title">FAQ</span>
@@ -636,7 +636,7 @@
                         </div>
                     </div>
 
-                    <div class="col-span-7 md:col-span-12">
+                    <div class="!col-span-7 !md:col-span-12">
                         <div class="accordion accordion-style1 accordion-style2 backdrop-blur-sm bg-white/80 rounded-2xl shadow-[8px_8px_32px_0px_#240C8714] overflow-hidden p-3" id="accordionExample">
                             <div class="accordion-item group grid grid-rows-[max-content_0fr] [&[class~='open']]:grid-rows-[max-content_1fr] duration-300 backdrop-blur-sm bg-white/60 shadow-[8px_0px_32px_0px_#240C8714] wow fadeInUp open" data-wow-delay=".2s">
                                 <h2 class="accordion-header">
@@ -823,10 +823,12 @@
 
 
         <!-- CTA SECTION START -->
-        <section class="deserve-create-section bg-[url('https://rudra-tailwind.vercel.app/assets/img/footer/deserve-bg.png')] bg-center bg-no-repeat bg-cover mt-[11px] mx-[11px] overflow-hidden pt-[clamp(50px,4.73vw,90px)] px-[5px] pb-[clamp(230px,19.44vw,370px)] sm:pb-[320px] xxs:pb-[350px] relative"
-                 style="background-image: url('https://rudra-tailwind.vercel.app/assets/img/footer/deserve-bg.png');"
-        >
-            <div class="et-container">
+        <section class="deserve-create-section
+        bg-[url('https://rudra-tailwind.vercel.app/assets/img/footer/deserve-bg.png')]
+        bg-center !bg-no-repeat !bg-cover !mt-[11px] mx-[11px] !mh-[90rem]
+        overflow-hidden pt-[clamp(50px,4.73vw,90px)] px-[5px]
+        pb-[clamp(230px,19.44vw,370px)] sm:pb-[320px] xxs:pb-[350px] relative">
+            <div class="!et-container">
                 <div class="deserve-content text-center max-w-[clamp(747px,39.41vw,750px)] mx-auto">
                     <div class="section-header">
                         <h2 class="et-section-title text-white mb-[clamp(20px,2.10vw,40px)] wow fadeInUp" data-wow-delay=".3s">
@@ -848,7 +850,7 @@
                         <div class="col-span-4 sm:col-span-12">
                             <div>
                                 <div class="footer-logo max-w-[clamp(160px,9.46vw,180px)] mb-[clamp(16px,1.26vw,24px)] sm:mx-auto">
-                                    <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo-theme2.png" alt="img">
+                                    <img src={{asset('assets/photo/logo-regular.png')}} alt="img">
                                 </div>
                                 <p class="text-white text-[14px] leading-[1.1]">&copy; 2025 Rudra, Inc.</p>
                             </div>

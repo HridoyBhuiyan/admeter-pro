@@ -84,7 +84,7 @@
                 <div class="header-left">
                     <div class="logo">
                         <a href="index.html" class="header-logo">
-                            <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo-lihgt.png" alt="logo-img">
+                            <img src={{asset('assets/photo/logo-rare.png')}} alt="logo-img">
                         </a>
                     </div>
                 </div>
