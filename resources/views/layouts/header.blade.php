@@ -28,47 +28,7 @@
                                 <a target="_blank" href="#">3517 W. Gray St. Utica, Pennsylvania</a>
                             </div>
                         </li>
-                        <li class="flex items-center">
-                            <div class="offcanvas__contact-icon mr-[clamp(10px,0.79vw,15px)]">
-                                <i class="fal fa-envelope"></i>
-                            </div>
-                            <div class="offcanvas__contact-text">
-                                <a href="mailto:info@example.com"><span class="mailto:info@example.com">alma.lawson@example.com</span></a>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="offcanvas__contact-icon mr-[clamp(10px,0.79vw,15px)]">
-                                <i class="fal fa-clock"></i>
-                            </div>
-                            <div class="offcanvas__contact-text">
-                                <a target="_blank" href="#">Sun-friday, 02am -09pm</a>
-                            </div>
-                        </li>
-                        <li class="flex items-center">
-                            <div class="offcanvas__contact-icon mr-[clamp(10px,0.79vw,15px)]">
-                                <i class="far fa-phone"></i>
-                            </div>
-                            <div class="offcanvas__contact-text">
-                                <a href="tel:+11002345909">(219) 555-0114</a>
-                            </div>
-                        </li>
                     </ul>
-                    <div class="header-button mt-clamp(16px,1.26vw,24px)">
-                        <a href="contact.html" class="theme-btn p2-bg flex items-center justify-center gap-[clamp(5px,0.42vw,8px)] text-center">
-                                <span>
-                                    Get A Quote
-                                    <span class="ani-arrow">
-                                        <i class="fa-solid fa-arrow-right-long"></i>
-                                    </span>
-                                </span>
-                        </a>
-                    </div>
-                    <div class="social-icon flex items-center">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -202,27 +162,25 @@
                         </div>
                     </div>
                     <div class="flex items-center gap-[12px]">
-                        <a href="#0" class="search-trigger hidden lg:flex search-icon bg-white w-[clamp(43px,2.52vw,48px)] aspect-square text-primary rounded-full items-center justify-center hover:bg-et2primary hover:text-white">
-                            <i class="fa-solid fa-magnifying-glass black"></i>
+
+                        <a href="contact.html" class="et-btn et-2-btn wow fadeInDown" data-wow-delay=".3s">
+                            <span class="icon">
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </span>
+                            Join Now
                         </a>
-                        <div class="header__hamburger hidden lg:block my-auto">
-                            <div class="sidebar__toggle bars-white">
-                                <img src="https://rudra-tailwind.vercel.app/assets/img/icon/bars.png" alt="icon">
-                            </div>
-                        </div>
                     </div>
                 </div>
 
                 <div class="header-hamburger-inner flex items-center lg:hidden !gap-[8px]">
-                    <a href="#0" class="search-trigger search-icon text-white w-[clamp(43px,2.52vw,48px)] aspect-square rounded-full flex items-center justify-center lg:hidden hover:bg-primary">
-                        <i class="fa-solid fa-magnifying-glass"></i>
-                    </a>
+
                     <a href="contact.html" class="et-btn bg-white/20 border border-white/20">
                         <div class="icon">
                             <i class="fa-solid fa-arrow-right"></i>
                         </div>
                         Check All Services
                     </a>
+
                     <div class="header__hamburger my-auto hidden lg:block">
                         <div class="sidebar__toggle">
                             <img src="https://rudra-tailwind.vercel.app/assets/img/icon/bars.png" alt="icon">
