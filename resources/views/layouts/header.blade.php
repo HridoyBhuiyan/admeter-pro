@@ -88,6 +88,108 @@
             </div>
         </div>
     </div>
+
+
+
+
+
+
+    <!-- Final Fixed Modal – ১০০% কাজ করবে (বাইরে ক্লিক করলেই বন্ধ) -->
+
+    <div id="auth-modal" class="fixed inset-0 z-[9999] hidden" aria-hidden="true">
+        <!-- Overlay – এই div-এ ক্লিক করলে মডাল বন্ধ হবে -->
+        <div class="fixed inset-0 bg-black/70 transition-opacity"
+             id="auth-modal-backdrop"></div>
+
+        <!-- Modal Wrapper -->
+        <div class="fixed inset-0 flex items-center justify-center p-4">
+            <!-- Modal Card – শুধু এই div-এ ক্লিক করলে কিছু হবে না -->
+            <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative"
+                 id="auth-modal-content"
+                 onclick="event.stopPropagation()">
+
+                <!-- Close Button (Top Right) -->
+                <button id="auth-modal-close"
+                        class="flex absolute top-4 right-4 z-10 hover:text-gray-700 text-red-600 transition hover:scale-110" style="align-items: center">
+                    Close
+                    <x-heroicon-o-x-mark class="w-8 h-8" />
+                </button>
+
+                <!-- Header -->
+                <div class="bg-gradient-to-r from-primary to-primary/90  px-8 py-8 text-center">
+                        <img src="{{asset('assets/photo/logo-regular.png')}}" alt="logo-img" class="mx-auto">
+                    <p class="opacity-90 text-lg">Get Jump on it</p>
+                </div>
+
+                <!-- Body -->
+                <div class="p-8 bg-gray-50">
+                    <div class="grid grid-cols-2 gap-5">
+                        <a href="{{ route('login') }}"
+                           class="flex items-center justify-center gap-3 bg-primary hover:bg-primary/90 text-white font-bold py-5 rounded-xl transition transform hover:scale-105 shadow-lg">
+                            <x-heroicon-o-arrow-right-on-rectangle class="w-7 h-7" />
+                            <span class="text-lg">Login</span>
+                        </a>
+
+                        <a href="{{ route('register') }}"
+                           class="flex items-center justify-center gap-3 bg-gray-900 hover:bg-black text-white font-bold py-5 rounded-xl transition transform hover:scale-105 shadow-lg">
+                            <x-heroicon-o-user-plus class="w-7 h-7" />
+                            <span class="text-lg">Register</span>
+                        </a>
+                    </div>
+
+                    <div class="mt-5 text-center">
+                        <p class="text-gray-600">Or</p>
+                        <button class="mt-1 text-primary font-semibold text-lg hover:underline">
+                            Check The Demo →
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const authBtn     = document.querySelector('.et-btn.border-2.border-white');
+            const modal       = document.getElementById('auth-modal');
+            const backdrop    = document.getElementById('auth-modal-backdrop');
+            const closeBtn    = document.getElementById('auth-modal-close');
+
+            const openModal = (e) => {
+                e.preventDefault();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeModal = () => {
+                console.log('close');
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            // Open
+            authBtn?.addEventListener('click', openModal);
+
+            // Close with X button
+            closeBtn?.addEventListener('click', closeModal);
+
+            // Close when clicking on backdrop (outside modal)
+            backdrop?.addEventListener('click', closeModal);
+
+            // Close with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+
+
+
+
+
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const trigger   = document.getElementById("mobile-menu-trigger");
