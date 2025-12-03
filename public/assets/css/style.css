@@ -9,7 +9,7 @@ Front End is Developed By Shaikh Abu Amer on bahalf of temptics pro
 
 
 CSS INDEX
-=================== 
+===================
 01. CUSTOM PROPERTIES
 02. GLOBAL
 03. Header
@@ -677,7 +677,7 @@ img {
     display: block;
   }
   .header-main .header-logo img {
-    width: 100%;
+    width: 90%;
     height: 100%;
   }
 }

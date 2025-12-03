@@ -7,7 +7,8 @@ export default defineConfig({
         laravel({
             input: [
                 'resources/js/app.jsx',
-                'resources/css/client-side/client-page.css'
+                'resources/css/client-side/client-page.css',
+                'resources/customJs/blade.js',
             ],
             refresh: true,
         }),
