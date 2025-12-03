@@ -10,7 +10,7 @@
 @section('content')
     <!-- Hero Section -->
     <main class="bg-white">
-        <!-- BANNER SECTION START -->
+
         <div class="banner-section relative overflow-hidden  bg-[position:50%_0%] bg-no-repeat bg-cover rounded-[20px] m-[11px] px-0 pt-[clamp(180px,12.61vw,240px)] xxs:pt-[130px] pb-[clamp(240px,14.71vw,280px)] xxs:pb-[180px]"
              style="background-image: url('https://rudra-tailwind.vercel.app/assets/img/banner/hero-thumb2.png');"
         >
@@ -68,10 +68,7 @@
                 </div>
             </div>
         </div>
-        <!-- BANNER SECTION END -->
 
-
-        <!-- About-section Start -->
         <section class="about-section bg-etWhite py-[clamp(60px,5.25vw,100px)] overflow-hidden">
             <div class="et-container">
                 <div class="grid !grid-cols-12 gap-y-[10px] items-end">
@@ -152,10 +149,8 @@
                 </div>
             </div>
         </section>
-        <!-- ABOUT SECTION END -->
 
 
-        <!-- SERVICES SECTION START -->
         <section class="service-section py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="!grid !grid-cols-12 gap-[clamp(16px,1.26vw,24px)] items-end mb-[clamp(20px,2.10vw,40px)]">
@@ -282,10 +277,8 @@
                 </div>
             </div>
         </section>
-        <!-- SERVICES SECTION END -->
 
 
-        <!--- WORK SECTION START -->
         <section class="work-section fix bg-etWhite py-[clamp(60px,5.25vw,100px)] overflow-hidden">
             <div class="et-container">
                 <div class="grid !grid-cols-2 md:grid-cols-1 gap-[clamp(16px,1.26vw,24px)]">
@@ -375,10 +368,8 @@
                 </div>
             </div>
         </section>
-        <!-- WORK SECTION END -->
 
 
-        <!-- DOWNLOAD SECTION START -->
         <section class="download-section bg-[url('assets/img/about/download-bg.png')] bg-center bg-no-repeat bg-cover rounded-[24px] m-[clamp(8px,0.58vw,11px)] overflow-hidden px-[clamp(12px,0.89vw,17px)] py-[clamp(95px,8.93vw,170px)]"
                  style="background-image: url('https://rudra-tailwind.vercel.app/assets/img/about/download-bg.png');"
         >
@@ -400,10 +391,8 @@
                 </div>
             </div>
         </section>
-        <!-- DOWNLOAD SECTION END -->
 
 
-        <!-- TESTIMONIAL 2.0 SECTION START -->
         <section class="testimonial-section2 overflow-hidden py-[clamp(40px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="!grid !grid-cols-12 gap-[clamp(24px,2.52vw,48px)]">
@@ -464,10 +453,8 @@
                 </div>
             </div>
         </section>
-        <!-- TESTIMONIAL 2.0 SECTION END -->
 
 
-        <!-- PRICING SECTION START -->
         <section class="pricing-section2 overflow-hidden bg-primary rounded-lg m-[clamp(10px,0.84vw,16px)] py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="grid grid-cols-12 gap-[clamp(16px,1.26vw,24px)] items-end mb-[clamp(20px,2.10vw,40px)]">
@@ -604,10 +591,8 @@
                 </div>
             </div>
         </section>
-        <!-- PRICING SECTION END -->
 
 
-        <!-- FAQ 02 START -->
         <section class="faq-section02 overflow-hidden bg-etWhite py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="!grid !grid-cols-12 gap-[clamp(16px,1.26vw,24px)]">
@@ -736,10 +721,8 @@
                 </div>
             </div>
         </section>
-        <!-- FAQ SECTION END -->
 
 
-        <!-- BLOG SECTION START -->
         <section class="blog-section1 overflow-hidden py-[clamp(60px,5.25vw,100px)]">
             <div class="et-container">
                 <div class="grid grid-cols-12 gap-[clamp(16px,1.26vw,24px)] items-end mb-[clamp(20px,2.10vw,40px)]">
@@ -819,35 +802,14 @@
                 </div>
             </div>
         </section>
-        <!-- BLOG SECTION END -->
 
 
         <!-- CTA SECTION START -->
-        <section class="deserve-create-section
-        bg-[url('https://rudra-tailwind.vercel.app/assets/img/footer/deserve-bg.png')]
-        bg-center !bg-no-repeat !bg-cover !mt-[11px] mx-[11px] !mh-[90rem]
-        overflow-hidden pt-[clamp(50px,4.73vw,90px)] px-[5px]
-        pb-[clamp(230px,19.44vw,370px)] sm:pb-[320px] xxs:pb-[350px] relative">
-            <div class="!et-container">
-                <div class="deserve-content text-center max-w-[clamp(747px,39.41vw,750px)] mx-auto">
-                    <div class="section-header">
-                        <h2 class="et-section-title text-white mb-[clamp(20px,2.10vw,40px)] wow fadeInUp" data-wow-delay=".3s">
-                            Ready to create the
-                            <span class="fw-300">Life you deserve?</span>
-                        </h2>
-                        <a href="contact.html" class="et-btn et-2-btn">
-                            <span class="icon">
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </span>
-                            Schedule Your Free Consultation
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="subscribe-wrapper backdrop-blur-[10px] bg-[#044524] inset-0 top-auto absolute py-[clamp(40px,4.20vw,80px)]">
+
+            <div class="subscribe-wrapper mx-2.5 !backdrop-blur-[10px] bg-[#044524] inset-0 top-auto !py-[clamp(40px,4.20vw,80px)]">
                 <div class="et-container">
-                    <div class="grid grid-cols-12 g-4 justify-content-center gap-y-[25px] sm:text-center">
-                        <div class="col-span-4 sm:col-span-12">
+                    <div class="!grid !grid-cols-12 g-4 justify-content-center gap-y-[25px] sm:text-center">
+                        <div class="!col-span-4 sm:col-span-12">
                             <div>
                                 <div class="footer-logo max-w-[clamp(160px,9.46vw,180px)] mb-[clamp(16px,1.26vw,24px)] sm:mx-auto">
                                     <img src={{asset('assets/photo/logo-regular.png')}} alt="img">
@@ -856,10 +818,10 @@
                             </div>
                         </div>
 
-                        <div class="col-span-8 sm:col-span-12">
-                            <div class="subscribe-inner flex items-center gap-[clamp(25px,2.63vw,50px)] md:flex-col md:items-start sm:items-center">
+                        <div class="!col-span-8 sm:col-span-12">
+                            <div class="!subscribe-inner flex !items-center gap-[clamp(25px,2.63vw,50px)] md:flex-col md:items-start sm:items-center">
                                 <h3 class="text-white text-[clamp(20px,1.26vw,24px)] font-bold leading-[1.15]">Subscribe to our newsletter!</h3>
-                                <form action="#0" class="form-grp2 flex items-center justify-between bg-white/20 border border-white/20 rounded-[100px] p-[4px] w-full">
+                                <form action="#0" class="form-grp2 !flex !items-center justify-between bg-white/20 border border-white/20 rounded-[100px] p-[4px] w-full">
                                     <input type="text" placeholder="Type your email address" class="w-full italic outline-none px-[clamp(16px,1.26vw,24px)] py-[clamp(7px,0.53vw,10px)] text-white">
                                     <button class="w-[clamp(46px,2.94vw,56px)] aspect-square rounded-full flex items-center justify-center bg-et2primary text-primary shrink-0" type="button">
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -879,7 +841,6 @@
                     </div>
                 </div>
             </div>
-        </section>
         <!-- CTA SECTION END -->
     </main>
 
