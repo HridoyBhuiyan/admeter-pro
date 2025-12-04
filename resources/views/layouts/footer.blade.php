@@ -37,9 +37,18 @@
                     <div class="">
                         <h4 class="text-[clamp(17px,1.05vw,20px)] font-bold leading-[1.25] mb-[clamp(8px,0.84vw,16px)]">Social Links</h4>
                         <div class="socal-icon flex justify-end gap-[clamp(4px,0.32vw,6px)] *:w-[clamp(35px,2.10vw,40px)] *:aspect-square *:rounded-full *:flex *:items-center *:justify-center *:border *:border-white/10 *:text-white *:hover:bg-secondary *:hover:text-primary transition duration-[400ms]">
-                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#">
+                                <svg class="w-7 h-7 text-[#1877F2] hover:text-[#166fe5] transition" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
                             <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                            <a href="#">
+                                <svg class="w-7 h-7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 180">
+                                    <path fill="#f00" d="M250.346 28.075A32.18 32.18 0 0 0 227.69 5.418C207.824 0 127.87 0 127.87 0S47.912.164 28.046 5.582A32.18 32.18 0 0 0 5.39 28.24c-6.009 35.298-8.34 89.084.165 122.97a32.18 32.18 0 0 0 22.656 22.657c19.866 5.418 99.822 5.418 99.822 5.418s79.955 0 99.82-5.418a32.18 32.18 0 0 0 22.657-22.657c6.338-35.348 8.291-89.1-.164-123.134"/>
+                                    <path fill="#e8e8e8" d="m102.421 128.06l66.328-38.418l-66.328-38.418z"/>
+                                </svg>
+                            </a>
                             <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
                         </div>
                     </div>
