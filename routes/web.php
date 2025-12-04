@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', [ClientSideController::class,'index']);
+Route::get('/user-registration/', [ClientSideController::class,'registration'])->name('user-registration');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

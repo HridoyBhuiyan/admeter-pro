@@ -10,4 +10,8 @@ class ClientSideController extends Controller
     {
         return view('homepage.homepage');
     }
+    function registration(Request $request)
+    {
+        return view('register.register');
+    }
 }
