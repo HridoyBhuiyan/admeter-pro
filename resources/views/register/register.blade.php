@@ -5,148 +5,111 @@
 
     <main class="bg-white">
 
-        <div class="banner-section bg-green-500 overflow-hidden  bg-[position:50%_0%] bg-no-repeat bg-cover rounded-[20px] m-[11px] px-0 pt-[clamp(180px,12.61vw,240px)] xxs:pt-[130px] pb-[clamp(240px,14.71vw,280px)] xxs:pb-[180px]"
-             style="background-image: url('https://rudra-tailwind.vercel.app/assets/img/banner/hero-thumb2.png');"
-        >
+        <!-- resources/views/components/contact-section.blade.php -->
+        <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div class="container mx-auto px-6 max-w-7xl">
+                <div class="!grid lg:grid-cols-2 gap-12 items-center">
 
-            <!-- Sponsor -->
-        </div>
-
-        <div class="min-h-screen bg-gradient-to-br from-[#f8fff9] via-white to-[#f0fffc] flex items-center justify-center px-4 py-12 relative overflow-hidden">
-
-            <div class="absolute inset-0 -z-10">
-                <div class="absolute top-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-                <div class="absolute bottom-0 right-0 w-96 h-96 bg-et3primary/8 rounded-full blur-3xl translate-x-1/3 translate-y-1/3"></div>
-                <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/3 rounded-full blur-3xl"></div>
-            </div>
-
-            <div class="et-container max-w-7xl mx-auto">
-                <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-                    <div class="order-2 lg:order-1 text-center lg:text-left">
-                        <div class="mb-10">
-                            <h2 class="text-[clamp(48px,8vw,50px)] font-extrabold leading-[1.05] text-[#1a1a1a]">
-                                Welcome to<br>
-                                <span class="text-gray-600">admeter<span class="text-transparent bg-clip-text bg-gradient-to-r from-[#3B69C7] via-[#407EBC] to-[#5AA1B4] drop-shadow-[0_10px_40px_rgba(138,43,226,0.6)]">pro</span>
-                            </span>
-                            </h2>
-                            <p class="text-[clamp(18px,2vw,24px)] text-[#2d2d2d]/80 mt-4 font-medium">
-                                The #1 Meta Ads Analytics Tool for Smart Advertisers
-                            </p>
+                    <!-- Left Side - Image with Floating Contact Card -->
+                    <div class="!relative">
+                        <div class="rounded-3xl overflow-hidden shadow-2xl">
+                            <img src="https://rudra-tailwind.vercel.app/assets/img/contact/contact-thumb1.png"
+                                 alt="Modern office for consultation"
+                                 class="w-full h-auto object-cover">
                         </div>
 
-                        <div class="relative">
-                            <img src="{{ asset('assets/img/illustrations/meta-ads-dashboard-pana.svg') }}"
-                                 alt="Meta Ads Analytics Dashboard"
-                                 class="w-full max-w-lg mx-auto drop-shadow-2xl">
+                        <!-- Floating Contact Card -->
+                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-11/12 max-w-md">
+                            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
+                                <div class="space-y-6">
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-600 text-sm">Phone Number</p>
+                                            <p class="font-bold text-lg text-gray-900">+880-123-4567</p>
+                                        </div>
+                                    </div>
 
-                            <div class="absolute -top-6 -left-6 w-24 h-24 bg-primary/10 rounded-full blur-xl"></div>
-                            <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-et3primary/10 rounded-full blur-xl"></div>
-                        </div>
-
-                        <div class="mt-10 text-center lg:text-left">
-                            <p class="text-[#2d2d2d]/70 text-[15px]">
-                                <span class="font-bold text-primary">8,000+</span> advertisers already growing with real data
-                            </p>
+                                    <div class="flex items-center gap-4">
+                                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <p class="text-gray-600 text-sm">Email Address</p>
+                                            <p class="font-bold text-lg text-gray-900">hello@admeterpro.com</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="order-1 lg:order-2">
-                        <div class="bg-white/70 backdrop-blur-2xl rounded-3xl shadow-2xl border border-white/50 p-[clamp(32px,6vw,56px)] max-w-md mx-auto">
-
-                            <div class="text-center mb-8">
-                                <img src="{{ asset('assets/img/logo.png') }}" alt="AdmeterPro" class="h-12 mx-auto">
+                    <!-- Right Side - Form -->
+                    <div class="bg-white rounded-3xl shadow-2xl p-10 lg:p-12">
+                        <div class="flex items-center gap-3 mb- mb-6">
+                            <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                </svg>
                             </div>
-
-                            <h2 class="text-center text-[clamp(28px,4vw,36px)] font-bold text-[#1a1a1a] mb-2">
-                                Create Your Account
-                            </h2>
-                            <p class="text-center text-[#2d2d2d]/70 mb-10">
-                                Start analyzing your Meta Ads in 30 seconds
-                            </p>
-
-                            <div class="mb-8">
-                                <a href="#" class="w-full flex items-center justify-center gap-3 px-6 py-4 bg-white border-2 border-[#e2e8f0] rounded-2xl hover:border-primary hover:shadow-lg transition-all duration-300 group">
-                                    <img src="{{ asset('assets/img/icons/google.svg') }}" alt="Google" class="w-6 h-6">
-                                    <span class="font-semibold text-[#1a1a1a] group-hover:text-primary">
-                                Continue with Google
-                            </span>
-                                </a>
-                            </div>
-
-                            <div class="relative text-center mb-8">
-                                <div class="absolute inset-0 flex items-center">
-                                    <div class="w-full border-t border-[#e2e8f0]"></div>
-                                </div>
-                                <div class="relative bg-white/70 px-4">
-                                    <span class="text-[#94a3b8] text-sm">Or sign up with email</span>
-                                </div>
-                            </div>
-
-                            <form method="POST" action="{{ route('register') }}" class="space-y-6">
-                                @csrf
-
-                                <div>
-                                    <input type="text" name="business_name" value="{{ old('business_name') }}" required autofocus
-                                           class="w-full px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all placeholder-[#94a3b8] text-[16px] font-medium"
-                                           placeholder="Business / Agency Name">
-                                    @error('business_name')
-                                    <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-                                    @enderror
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-4">
-                                    <input type="text" name="name" value="{{ old('name') }}" required
-                                           class="px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all placeholder-[#94a3b8]"
-                                           placeholder="Your Name">
-                                    <input type="tel" name="phone" value="{{ old('phone') }}" required
-                                           class="px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all placeholder-[#94a3b8]"
-                                           placeholder="Phone Number">
-                                </div>
-
-                                <div>
-                                    <input type="email" name="email" value="{{ old('email') }}" required
-                                           class="w-full px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all placeholder-[#94a3b8] text-[16px]"
-                                           placeholder="you@business.com">
-                                    @error('email')
-                                    <p class="text-red-500 text-sm mt-2">{{ $message }}</p>
-                                    @enderror
-                                </div>
-
-                                <div class="grid grid-cols-2 gap-4">
-                                    <input type="password" name="password" required autocomplete="new-password"
-                                           class="px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all"
-                                           placeholder="Password">
-                                    <input type="password" name="password_confirmation" required
-                                           class="px-6 py-4 bg-white/60 border-2 border-[#e2e8f0] rounded-2xl focus:border-primary focus:outline-none transition-all"
-                                           placeholder="Confirm Password">
-                                </div>
-
-                                <button type="submit" class="et-btn w-full !py-5 !text-lg !font-bold bg-gradient-to-r from-primary to-et3primary hover:shadow-2xl transform hover:scale-[1.02] transition-all duration-300">
-                                    <span>Create Free Account →</span>
-                                    <div class="icon">
-                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                                        </svg>
-                                    </div>
-                                </button>
-
-                                <p class="text-center text-xs text-[#94a3b8] mt-6 leading-relaxed">
-                                    By signing up, you agree to our
-                                    <a href="#" class="text-primary font-medium hover:underline">Terms of Service</a> and
-                                    <a href="#" class="text-primary font-medium hover:underline">Privacy Policy</a>
-                                </p>
-
-                                <p class="text-center mt-8 text-[#2d2d2d]/70">
-                                    Already have an account?
-                                    <a href="{{ route('login') }}" class="font-bold text-primary hover:underline">Sign In</a>
-                                </p>
-                            </form>
+                            <span class="text-yellow-600 font-medium">Schedule</span>
                         </div>
+
+                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
+                            Let's Discuss How We Can Transform Your Life
+                        </h2>
+
+                        <p class="text-gray-600 mb-10">
+                            Schedule a free consultation to discover personalized solutions from our financial experts.
+                        </p>
+
+                        <form class="space-y-6">
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                                    <input type="text" required
+                                           class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
+                                           placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Email <span class="text-red-500">*</span></label>
+                                    <input type="email" required
+                                           class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
+                                           placeholder="john@example.com">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone number <span class="text-red-500">*</span></label>
+                                <input type="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
+                                       placeholder="+880 1xxx xxxxxx">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Your comment <span class="text-red-500">*</span></label>
+                                <textarea rows="5" required
+                                          class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition resize-none"
+                                          placeholder="Tell us about your goals..."></textarea>
+                            </div>
+
+                            <button type="submit"
+                                    class="group relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-10 py-5 rounded-full transition transform hover:scale-105 shadow-lg">
+                                <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5m-5 0l4-4m-4 4l4 4"/>
+                                </svg>
+                                Submit Your Message
+                            </button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
 

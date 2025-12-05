@@ -93,35 +93,26 @@
 
 
 
-
-    <!-- Final Fixed Modal – ১০০% কাজ করবে (বাইরে ক্লিক করলেই বন্ধ) -->
-
     <div id="auth-modal" class="fixed inset-0 z-[9999] hidden" aria-hidden="true">
-        <!-- Overlay – এই div-এ ক্লিক করলে মডাল বন্ধ হবে -->
         <div class="fixed inset-0 bg-black/70 transition-opacity"
              id="auth-modal-backdrop"></div>
 
-        <!-- Modal Wrapper -->
         <div class="fixed inset-0 flex items-center justify-center p-4">
-            <!-- Modal Card – শুধু এই div-এ ক্লিক করলে কিছু হবে না -->
             <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden relative"
                  id="auth-modal-content"
                  onclick="event.stopPropagation()">
 
-                <!-- Close Button (Top Right) -->
                 <button id="auth-modal-close"
                         class="flex absolute top-4 right-4 z-10 hover:text-gray-700 text-red-600 transition hover:scale-110" style="align-items: center">
                     Close
                     <x-heroicon-o-x-mark class="w-8 h-8" />
                 </button>
 
-                <!-- Header -->
                 <div class="bg-gradient-to-r from-primary to-primary/90  px-8 py-8 text-center">
                         <img src="{{asset('assets/photo/logo-regular.png')}}" alt="logo-img" class="mx-auto">
                     <p class="opacity-90 text-lg">Get Jump on it</p>
                 </div>
 
-                <!-- Body -->
                 <div class="p-8 bg-gray-50">
                     <div class="grid grid-cols-2 gap-5">
                         <a href="{{ route('login') }}"
@@ -167,16 +158,10 @@
                 document.body.style.overflow = '';
             };
 
-            // Open
             authBtn?.addEventListener('click', openModal);
-
-            // Close with X button
             closeBtn?.addEventListener('click', closeModal);
-
-            // Close when clicking on backdrop (outside modal)
             backdrop?.addEventListener('click', closeModal);
 
-            // Close with Escape key
             document.addEventListener('keydown', (e) => {
                 if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
                     closeModal();
