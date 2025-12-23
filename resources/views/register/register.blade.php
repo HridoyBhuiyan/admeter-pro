@@ -1,48 +1,55 @@
 @extends('layouts.master')
-@section('title', 'Sign Up - AdmeterPro')
+
+@section('title', 'AdMeter Pro - Real-Time Ad Tracking & Analytics')
+
+@push('styles')
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+@endpush
 
 @section('content')
 
     <main class="bg-white">
 
-        <!-- resources/views/components/contact-section.blade.php -->
-        <section class="py-20 bg-gradient-to-br from-gray-50 to-gray-100">
+
+        <div class="banner-section relative overflow-11hidden bg-[position:50%_0%] bg-no-repeat bg-cover rounded-[20px] m-[11px]
+        px-0 py-11" style="background-image: url('{{ asset('assets/photo/banner-2.png') }}');"></div>
+
+
+
+
+        <section class="py-5 bg-gradient-to-br from-gray-50 to-gray-100">
             <div class="container mx-auto px-6 max-w-7xl">
                 <div class="!grid lg:grid-cols-2 gap-12 items-center">
 
-                    <!-- Left Side - Image with Floating Contact Card -->
-                    <div class="!relative">
-                        <div class="rounded-3xl overflow-hidden shadow-2xl">
-                            <img src="https://rudra-tailwind.vercel.app/assets/img/contact/contact-thumb1.png"
-                                 alt="Modern office for consultation"
-                                 class="w-full h-auto object-cover">
-                        </div>
+                    <div class="relative rounded-3xl overflow-hidden shadow-2xl">
+                        <img src="https://rudra-tailwind.vercel.app/assets/img/contact/contact-thumb1.png" alt="Office" class="w-full h-auto object-cover">
 
-                        <!-- Floating Contact Card -->
-                        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 w-11/12 max-w-md">
-                            <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
-                                <div class="space-y-6">
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
-                                            </svg>
+                        <div class="absolute flex left-5 right-5 bottom-5">
+                            <div class="pointer-events-auto w-11/12 max-w-md">
+                                <div class="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 border border-white/20">
+                                    <div class="space-y-6">
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="text-gray-600 text-sm">Phone Number</p>
+                                                <p class="font-bold text-lg text-gray-900">+880-123-4567</p>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <p class="text-gray-600 text-sm">Phone Number</p>
-                                            <p class="font-bold text-lg text-gray-900">+880-123-4567</p>
-                                        </div>
-                                    </div>
 
-                                    <div class="flex items-center gap-4">
-                                        <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                            </svg>
-                                        </div>
-                                        <div>
-                                            <p class="text-gray-600 text-sm">Email Address</p>
-                                            <p class="font-bold text-lg text-gray-900">hello@admeterpro.com</p>
+                                        <div class="flex items-center gap-4">
+                                            <div class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
+                                                <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                                </svg>
+                                            </div>
+                                            <div>
+                                                <p class="text-gray-600 text-sm">Email Address</p>
+                                                <p class="font-bold text-lg text-gray-900">hello@admeterpro.com</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -52,14 +59,6 @@
 
                     <!-- Right Side - Form -->
                     <div class="bg-white rounded-3xl shadow-2xl p-10 lg:p-12">
-                        <div class="flex items-center gap-3 mb- mb-6">
-                            <div class="w-10 h-10 bg-yellow-400 rounded-lg flex items-center justify-center">
-                                <svg class="w-6 h-6 text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <span class="text-yellow-600 font-medium">Schedule</span>
-                        </div>
 
                         <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
                             Let's Discuss How We Can Transform Your Life
@@ -114,3 +113,9 @@
 
 
 @endsection
+@push('scripts')
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+@endpush

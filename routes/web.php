@@ -5,8 +5,8 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
-Route::get('/', [ClientSideController::class,'index']);
-Route::get('/user-registration/', [ClientSideController::class,'registration'])->name('user-registration');
+Route::get('/', [ClientSideController::class,'index'])->name('home');
+Route::get('/user-registration/', [ClientSideController::class,'registration'])->name('registration');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

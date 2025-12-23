@@ -44,11 +44,7 @@
                         <div class="main-menu">
                             <nav id="mobile-menu">
                                 <ul>
-                                    <li class="has-dropdown active menu-thumb"><a href="index.html">Home</a></li>
-                                    <li><a href="about.html">About</a></li>
-                                    <li><a href="services.html">Pricing</a></li>
-                                    <li><a href="case-details.html">Contact</a></li>
-                                    <li><a href="contact.html">Case Study</a></li>
+
                                     <li><a href="contact.html">Career</a></li>
 
 
