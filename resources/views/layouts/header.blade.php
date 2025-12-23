@@ -171,32 +171,35 @@
 
 
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const trigger   = document.getElementById("mobile-menu-trigger");
-            const offcanvas = document.getElementById("mobile-offcanvas");
-            const overlay   = document.getElementById("mobile-overlay");
-            const closeBtn  = document.getElementById("mobile-menu-close");
+{{--    <script>--}}
+{{--        document.addEventListener("DOMContentLoaded", () => {--}}
+{{--            const trigger   = document.getElementById("mobile-menu-trigger");--}}
+{{--            const offcanvas = document.getElementById("mobile-offcanvas");--}}
+{{--            const overlay   = document.getElementById("mobile-overlay");--}}
+{{--            const closeBtn  = document.getElementById("mobile-menu-close");--}}
 
-            const open = () => {
-                offcanvas.classList.add("active");
-                overlay.classList.add("active");
-                document.body.style.overflow = "hidden";
-            };
+{{--            const open = () => {--}}
+{{--                offcanvas.classList.add("active");--}}
+{{--                overlay.classList.add("active");--}}
+{{--                document.body.style.overflow = "hidden";--}}
+{{--            };--}}
 
-            const close = () => {
-                offcanvas.classList.remove("active");
-                overlay.classList.remove("active");
-                document.body.style.overflow = "";
-            };
+{{--            const close = () => {--}}
+{{--                offcanvas.classList.remove("active");--}}
+{{--                overlay.classList.remove("active");--}}
+{{--                document.body.style.overflow = "";--}}
+{{--            };--}}
 
-            trigger?.addEventListener("click", open);
-            closeBtn?.addEventListener("click", close);
-            overlay?.addEventListener("click", close);
+{{--            trigger?.addEventListener("click", open);--}}
+{{--            closeBtn?.addEventListener("click", close);--}}
+{{--            overlay?.addEventListener("click", close);--}}
 
-            document.addEventListener("keydown", e => {
-                if (e.key === "Escape") close();
-            });
-        });
-    </script>
+{{--            document.addEventListener("keydown", e => {--}}
+{{--                if (e.key === "Escape") close();--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
+
+
+
 </header>
