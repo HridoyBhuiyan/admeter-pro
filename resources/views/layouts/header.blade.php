@@ -4,7 +4,7 @@
             <div class="offcanvas__content">
                 <div class="offcanvas__top mb-[clamp(16px,1.26vw,24px)] flex justify-between items-center">
                     <div class="offcanvas__logo">
-                        <a href="index.html">
+                        <a href="{{route('home')}}">
                             <img src="https://rudra-tailwind.vercel.app/assets/img/logo/logo.png" alt="logo-img">
                         </a>
                     </div>
@@ -34,7 +34,7 @@
             <div class="header-main">
                 <div class="header-left">
                     <div class="logo">
-                        <a href="index.html" class="header-logo">
+                        <a href="{{route('home')}}" class="header-logo">
                             <img src={{asset('assets/photo/logo-rare.png')}} alt="logo-img">
                         </a>
                     </div>

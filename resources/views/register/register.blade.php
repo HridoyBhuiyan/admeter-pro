@@ -17,7 +17,7 @@
 
         <section class="py-5 bg-gradient-to-br from-gray-50 to-gray-100">
             <div class="container mx-auto px-6 max-w-7xl">
-                <div class="!grid lg:grid-cols-2 gap-12 items-center">
+                <div class="!grid lg:grid-cols-2 gap-12 items-stretch">
 
                     <div class="relative rounded-3xl overflow-hidden shadow-2xl">
                         <img src="https://rudra-tailwind.vercel.app/assets/img/contact/contact-thumb1.png" alt="Office" class="w-full h-auto object-cover">
@@ -56,51 +56,47 @@
                     </div>
 
                     <!-- Right Side - Form -->
-                    <div class="bg-white rounded-3xl shadow-2xl p-10 lg:p-12">
+                    <div class="bg-white rounded-3xl shadow-2xl p-8">
 
-                        <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 leading-tight mb-4">
-                            Let's Discuss How We Can Transform Your Life
-                        </h2>
+                        <div class="text-2xl lg:text-2xl font-bold text-gray-900 leading-tight mb-3">
+                            Get Your AdMeter Pro Account
+                        </div>
 
-                        <p class="text-gray-600 mb-10">
-                            Schedule a free consultation to discover personalized solutions from our financial experts.
+                        <p class="text-gray-600 mb-6">
+                            Start with free trial and get access to all features for first 14 days.
                         </p>
 
-                        <form class="space-y-6">
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
-                                    <input type="text" required
-                                           class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
-                                           placeholder="John Doe">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-700 mb-2">Full Email <span class="text-red-500">*</span></label>
-                                    <input type="email" required
-                                           class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
-                                           placeholder="john@example.com">
-                                </div>
+                        <form class="space-y-4">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
+                                <input type="text" required class="p-3 w-full rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="John Doe">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone number <span class="text-red-500">*</span></label>
-                                <input type="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition"
-                                       placeholder="+880 1xxx xxxxxx">
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Band Name <span class="text-red-500">*</span></label>
+                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-700 mb-2">Your comment <span class="text-red-500">*</span></label>
-                                <textarea rows="5" required
-                                          class="w-full px-5 py-4 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition resize-none"
-                                          placeholder="Tell us about your goals..."></textarea>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number<span class="text-red-500">*</span></label>
+                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
                             </div>
+
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-700 mb-2">Email ID<span class="text-red-500">*</span></label>
+                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
+                            </div>
+
+
+
+
 
                             <button type="submit"
-                                    class="group relative inline-flex items-center gap-3 bg-green-600 hover:bg-green-700 text-white font-bold text-lg px-10 py-5 rounded-full transition transform hover:scale-105 shadow-lg">
-                                <svg class="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5h5m-5 0l4-4m-4 4l4 4"/>
-                                </svg>
-                                Submit Your Message
+                                    class="group relative flex align-middle justify-center w-full items-center gap-3 bg-green-500 hover:bg-green-700 text-white
+                                    font-bold text-lg px-10 py-2 rounded-full transition transform hover:scale-105 shadow-lg">
+                                <span>Submit Your Message</span>
+                                <x-heroicon-o-arrow-right class="w-7 h-7 text-white" />
                             </button>
                         </form>
                     </div>

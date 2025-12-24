@@ -77,24 +77,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="team.html" class="inline-flex items-center text-white text-[15px] gap-[8px] leading-[1.1] text-left transition duration-[500ms] hover:text-secondary">
-                                Team <i class="fa-solid fa-arrow-up-right"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="about.html" class="inline-flex items-center text-white text-[15px] gap-[8px] leading-[1.1] text-left transition duration-[500ms] hover:text-secondary">
-                                Awards <i class="fa-solid fa-arrow-up-right"></i>
-                            </a>
-                        </li>
-                        <li>
                             <a href="contact.html" class="inline-flex items-center text-white text-[15px] gap-[8px] leading-[1.1] text-left transition duration-[500ms] hover:text-secondary">
                                 Contact <i class="fa-solid fa-arrow-up-right"></i>
                             </a>
                         </li>
                     </ul>
-                    <div class="payment-thumb">
-                        <img src="https://rudra-tailwind.vercel.app/assets/img/footer/footer-payment.png" alt="img">
-                    </div>
+
                 </div>
             </div>
         </div>
