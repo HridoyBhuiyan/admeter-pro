@@ -822,7 +822,7 @@
                             <div class="!subscribe-inner flex !items-center gap-[clamp(25px,2.63vw,50px)] md:flex-col md:items-start sm:items-center">
                                 <h3 class="text-white text-[clamp(20px,1.26vw,24px)] font-bold leading-[1.15]">Subscribe to our newsletter!</h3>
                                 <form action="#0" class="form-grp2 !flex !items-center justify-between bg-white/20 border border-white/20 rounded-[100px] p-[4px] w-full">
-                                    <input type="text" placeholder="Type your email address" class="w-full italic outline-none px-[clamp(16px,1.26vw,24px)] py-[clamp(7px,0.53vw,10px)] text-white">
+                                    <input type="text" placeholder="Type your email address" class="w-full px-2 rounded-3xl italic outline-none py-[clamp(7px,0.53vw,10px)] text-white">
                                     <button class="w-[clamp(46px,2.94vw,56px)] aspect-square rounded-full flex items-center justify-center bg-et2primary text-primary shrink-0" type="button">
                                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <g clip-path="url(#clip0_2290_2646)">

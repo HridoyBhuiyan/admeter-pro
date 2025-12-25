@@ -14,4 +14,9 @@ class ClientSideController extends Controller
     {
         return view('register.register');
     }
+    public function store(Request $request)
+    {
+        return $request;
+    }
+
 }

@@ -117,7 +117,7 @@
                             <span class="text-lg">Login</span>
                         </a>
 
-                        <a href="{{ route('register') }}"
+                        <a href="{{ route('registration') }}"
                            class="flex items-center justify-center gap-3 bg-gray-900 hover:bg-black text-white font-bold py-5 rounded-xl transition transform hover:scale-105 shadow-lg">
                             <x-heroicon-o-user-plus class="w-7 h-7" />
                             <span class="text-lg">Register</span>

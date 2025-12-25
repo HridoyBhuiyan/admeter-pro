@@ -34,7 +34,7 @@
                                             </div>
                                             <div>
                                                 <p class="text-gray-600 text-sm">Phone Number</p>
-                                                <p class="font-bold text-lg text-gray-900">+880-123-4567</p>
+                                                <p class="font-bold text-lg text-gray-900">+880 1766-976861</p>
                                             </div>
                                         </div>
 
@@ -46,7 +46,7 @@
                                             </div>
                                             <div>
                                                 <p class="text-gray-600 text-sm">Email Address</p>
-                                                <p class="font-bold text-lg text-gray-900">hello@admeterpro.com</p>
+                                                <p class="font-bold text-lg text-gray-900">info@admeterpro.com</p>
                                             </div>
                                         </div>
                                     </div>
@@ -66,26 +66,27 @@
                             Start with free trial and get access to all features for first 14 days.
                         </p>
 
-                        <form class="space-y-4">
+                        <form action="{{route('registration.store')}}" class="space-y-4" method="POST">
+                            @csrf
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Full Name <span class="text-red-500">*</span></label>
-                                <input type="text" required class="p-3 w-full rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="John Doe">
+                                <input name="name" type="text" required class="p-3 w-full rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="Your Name">
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Band Name <span class="text-red-500">*</span></label>
-                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
+                                <input name="brandName" type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="Brand Name">
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number<span class="text-red-500">*</span></label>
-                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
+                                <input name="phone" type="tel" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="+880 1***** ****">
                             </div>
 
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-700 mb-2">Email ID<span class="text-red-500">*</span></label>
-                                <input type="text" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="john@example.com">
+                                <input name="email" type="email" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="Email Address">
                             </div>
 
 

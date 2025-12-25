@@ -7,6 +7,7 @@ use Inertia\Inertia;
 
 Route::get('/', [ClientSideController::class,'index'])->name('home');
 Route::get('/user-registration/', [ClientSideController::class,'registration'])->name('registration');
+Route::post('/user-registration-store/', [ClientSideController::class,'store'])->name('registration.store');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
