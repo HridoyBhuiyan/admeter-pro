@@ -36,7 +36,7 @@ class SetupClientSiteJob implements ShouldQueue
             $cpanel->uploadHtaccess($folder);
 
             $client->status = 'completed';
-            $client->site_url = 'https://' . $client->brand_slug . '.admeterpro.com'; // আপনার ডোমেইন অনুযায়ী চেঞ্জ করুন
+            $client->site_url = 'https://' . $client->brand_slug . '.admeterpro.com';
             $client->save();
 
             Log::info("Site deployed successfully: {$client->site_url}");
