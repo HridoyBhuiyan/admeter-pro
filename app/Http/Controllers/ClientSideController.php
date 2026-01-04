@@ -31,6 +31,8 @@ class ClientSideController extends Controller
             'email.unique' => 'This Email Already Exist. Please Try Another Email',
         ]);
 
+
+
         $brandSlug = Str::slug($request['brandName']);
 
         $client = Clients::create([
@@ -39,7 +41,6 @@ class ClientSideController extends Controller
             'email'      => $request['email'],
             'phone'      => $request['phone'],
         ]);
-
 
         return SetupClientSiteJob::dispatch($client->id);
 

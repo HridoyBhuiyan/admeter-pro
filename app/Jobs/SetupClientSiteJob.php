@@ -19,7 +19,7 @@ class SetupClientSiteJob implements ShouldQueue
 
     public function __construct($clientId)
     {
-        $this->clientId = $clientId;
+        return $this->clientId = $clientId;
     }
 
     public function handle(CpanelService $cpanel)
