@@ -34,8 +34,6 @@ class ClientSideController extends Controller
             'email.unique' => 'This Email Already Exist. Please Try Another Email',
         ]);
 
-
-
         $brandSlug = Str::slug($request['brandName']);
 
         $client = Clients::create([
@@ -46,45 +44,54 @@ class ClientSideController extends Controller
         ]);
 
         try {
-            // ডাটাবেস থেকে config নিয়ে আসা (একবার cache করতে পারেন)
-            $cpanelHost   = str_replace(['https://', 'http://'], '', \DB::table('configs')->where('key', 'cpanel_address')->value('value')); // business906.web-hosting.com
-            $cpanelUser   = DB::table('configs')->where('key', 'cpanel_username')->value('value'); // markyuiz
-            $apiToken     = DB::table('configs')->where('key', 'api_token')->value('value');
-            $port         = DB::table('configs')->where('key', 'port')->value('value') ?? 2083;
-            $parentPath   = DB::table('configs')->where('key', 'parent_path')->value('value'); // /home/markyuiz/admeterpro.com
+            // Configs থেকে ডেটা নেওয়া
+            $cpanelHost = str_replace(['https://', 'http://'], '', DB::table('configs')->where('key', 'cpanel_address')->value('value')); // business906.web-hosting.com
+            $cpanelUser = DB::table('configs')->where('key', 'cpanel_username')->value('value'); // markyuiz
+            $apiToken   = DB::table('configs')->where('key', 'api_token')->value('value');
+            $port       = DB::table('configs')->where('key', 'port')->value('value') ?? 2083;
+            $parentPath = DB::table('configs')->where('key', 'parent_path')->value('value'); // /home/markyuiz/admeterpro.com
+            $gitUrl     = DB::table('configs')->where('key', 'git_url')->value('value'); // https://github.com/HridoyBhuiyan/admeter-pro
 
-            // ফোল্ডারের parent path – public_html-এর সমান
-            $folderParent = $parentPath; // অথবা সরাসরি 'public_html' দিয়ে টেস্ট করতে পারেন
+            // SSH Git URL-এ কনভার্ট করা (private repo-এর জন্য আবশ্যক)
+            $sshGitUrl = preg_replace('#^https?://github\.com/#', 'git@github.com:', $gitUrl);
+            if (!str_ends_with($sshGitUrl, '.git')) {
+                $sshGitUrl .= '.git';
+            }
 
-            $url = "https://{$cpanelHost}:{$port}/json-api/cpanel?"
-                . http_build_query([
-                    'cpanel_jsonapi_user'       => $cpanelUser,
-                    'cpanel_jsonapi_apiversion' => 2,
-                    'cpanel_jsonapi_module'     => 'Fileman',
-                    'cpanel_jsonapi_func'       => 'mkdir',
-                    'path'                      => $folderParent,       // parent directory
-                    'name'                      => $brandSlug,          // নতুন ফোল্ডারের নাম
-                    'permissions'               => '0755',
-                ]);
+            $repositoryRoot = rtrim($parentPath, '/') . '/' . $brandSlug;
+
+            $url = "https://{$cpanelHost}:{$port}/execute/VersionControl/create";
+
+            $params = [
+                'type'            => 'git',
+                'name'            => $brandSlug,
+                'repository_root' => $repositoryRoot,
+                'source_repository' => json_encode([
+                    'remote_name' => 'origin',
+                    'url'         => $sshGitUrl,  // SSH URL ব্যবহার করা
+                ]),
+                'branch'          => 'main',  // আপনার branch main
+            ];
 
             $response = Http::withHeaders([
                 'Authorization' => "cpanel {$cpanelUser}:{$apiToken}",
-            ])->get($url);
+            ])->asForm()->post($url, $params);
 
             if ($response->successful()) {
                 $data = $response->json();
-                if ($data['cpanelresult']['event']['result'] ?? 0 == 1) {
-                    // সফল হলে (অপশনাল: লগ বা মেসেজ)
-                    Log::info("Folder created for client: {$brandSlug}");
+                if ($data['status'] ?? 0 == 1) {
+                    Log::info("Git repository successfully cloned for client: {$brandSlug}");
                 } else {
-                    Log::error("cPanel folder create failed: " . ($data['cpanelresult']['error'] ?? 'Unknown'));
+                    Log::error("Git clone failed: " . json_encode($data['errors'] ?? $data));
                 }
             } else {
-                Log::error("cPanel API HTTP error: " . $response->status());
+                Log::error("Git API HTTP error: " . $response->status() . ' | ' . $response->body());
             }
+
         } catch (\Exception $e) {
-            Log::error("cPanel folder creation exception: " . $e->getMessage());
+            Log::error("Git repository creation exception: " . $e->getMessage());
         }
+
         SetupClientSiteJob::dispatch($client);
 
         return redirect()->route('registration')
