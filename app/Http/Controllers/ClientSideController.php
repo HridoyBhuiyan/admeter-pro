@@ -35,6 +35,7 @@ class ClientSideController extends Controller
         ]);
 
 
+
         $brandSlug = Str::slug($request['brandName']);
 
         $client = Clients::create([
@@ -45,13 +46,15 @@ class ClientSideController extends Controller
         ]);
 
         try {
-            $cpanelHost   = str_replace(['https://', 'http://'], '', DB::table('configs')->where('key', 'cpanel_address')->value('value'));
-            $cpanelUser   = DB::table('configs')->where('key', 'cpanel_username')->value('value');
+            // ডাটাবেস থেকে config নিয়ে আসা (একবার cache করতে পারেন)
+            $cpanelHost   = str_replace(['https://', 'http://'], '', \DB::table('configs')->where('key', 'cpanel_address')->value('value')); // business906.web-hosting.com
+            $cpanelUser   = DB::table('configs')->where('key', 'cpanel_username')->value('value'); // markyuiz
             $apiToken     = DB::table('configs')->where('key', 'api_token')->value('value');
             $port         = DB::table('configs')->where('key', 'port')->value('value') ?? 2083;
-            $parentPath   = DB::table('configs')->where('key', 'parent_path')->value('value');
+            $parentPath   = DB::table('configs')->where('key', 'parent_path')->value('value'); // /home/markyuiz/admeterpro.com
 
-            $folderParent = $parentPath;
+            // ফোল্ডারের parent path – public_html-এর সমান
+            $folderParent = $parentPath; // অথবা সরাসরি 'public_html' দিয়ে টেস্ট করতে পারেন
 
             $url = "https://{$cpanelHost}:{$port}/json-api/cpanel?"
                 . http_build_query([
@@ -59,8 +62,8 @@ class ClientSideController extends Controller
                     'cpanel_jsonapi_apiversion' => 2,
                     'cpanel_jsonapi_module'     => 'Fileman',
                     'cpanel_jsonapi_func'       => 'mkdir',
-                    'path'                      => $folderParent,
-                    'name'                      => $brandSlug,
+                    'path'                      => $folderParent,       // parent directory
+                    'name'                      => $brandSlug,          // নতুন ফোল্ডারের নাম
                     'permissions'               => '0755',
                 ]);
 
@@ -68,11 +71,20 @@ class ClientSideController extends Controller
                 'Authorization' => "cpanel {$cpanelUser}:{$apiToken}",
             ])->get($url);
 
+            if ($response->successful()) {
+                $data = $response->json();
+                if ($data['cpanelresult']['event']['result'] ?? 0 == 1) {
+                    // সফল হলে (অপশনাল: লগ বা মেসেজ)
+                    Log::info("Folder created for client: {$brandSlug}");
+                } else {
+                    Log::error("cPanel folder create failed: " . ($data['cpanelresult']['error'] ?? 'Unknown'));
+                }
+            } else {
+                Log::error("cPanel API HTTP error: " . $response->status());
+            }
         } catch (\Exception $e) {
             Log::error("cPanel folder creation exception: " . $e->getMessage());
         }
-
-
         SetupClientSiteJob::dispatch($client);
 
         return redirect()->route('registration')
