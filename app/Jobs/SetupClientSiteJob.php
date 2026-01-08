@@ -3,47 +3,77 @@
 namespace App\Jobs;
 
 use App\Models\Clients;
-use App\Services\CpanelService;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Process\Process;
+use Symfony\Component\Process\Exception\ProcessFailedException;
 
 class SetupClientSiteJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public $clientId;
+    public $timeout = 600;
+    public $tries = 2;
 
-    public function __construct($clientId)
+    protected $client;
+
+
+    public function __construct(Clients $client)
     {
-        return $this->clientId = $clientId;
+        $this->client = $client;
     }
 
-    public function handle(CpanelService $cpanel)
+
+    public function handle(): void
     {
-        $client = Clients::findOrFail($this->clientId);
-        $client->status = 'processing';
-        $client->save();
+        $brandSlug = \Str::slug($this->client->brand_name);
+        $parentPath = DB::table('configs')->where('key', 'parent_path')->value('value');
+
+        $clientFolderPath = rtrim($parentPath, '/') . '/' . $brandSlug;
+
+        if (!is_dir($clientFolderPath)) {
+            Log::error("Client folder not found: {$clientFolderPath}");
+            return;
+        }
+
+        Log::info("Starting site setup for client: {$this->client->brand_name} ({$brandSlug})");
 
         try {
-            $folder = env('BRANDS_PATH') . '/' . $client->brand_slug;
+            chdir($clientFolderPath);
+            $this->runCommand(['git', 'init']);
+            Log::info("Git initialized in {$clientFolderPath}");
 
-            $cpanel->createDirectory($folder);
-            $cpanel->deployGitRepo($folder);
-            $cpanel->uploadHtaccess($folder);
+            $repoUrl = 'https://github.com/HridoyBhuiyan/adpulse-dev.git';
 
-            $client->status = 'completed';
-            $client->site_url = 'https://' . $client->brand_slug . '.admeterpro.com';
-            $client->save();
+            $this->runCommand(['git', 'remote', 'add', 'origin', $repoUrl]);
+            $this->runCommand(['git', 'pull', 'origin', 'main', '--depth=1']);
 
-            Log::info("Site deployed successfully: {$client->site_url}");
+            Log::info("Successfully pulled code from adpulse-dev into {$clientFolderPath}");
+
+
         } catch (\Exception $e) {
-            $client->status = 'failed';
-            $client->save();
-            Log::error("Deployment failed for client {$client->id}: " . $e->getMessage());
+            Log::error("SetupClientSiteJob failed for {$brandSlug}: " . $e->getMessage());
+            throw $e;
         }
+    }
+
+
+    private function runCommand(array $command): void
+    {
+        $process = new Process($command);
+        $process->setTimeout(300);
+        $process->run();
+
+        if (!$process->isSuccessful()) {
+            throw new ProcessFailedException($process);
+        }
+
+        Log::info('Command Output: ' . $process->getOutput());
     }
 }
