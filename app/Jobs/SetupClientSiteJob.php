@@ -24,7 +24,7 @@ class SetupClientSiteJob implements ShouldQueue
 
     public function handle(): void
     {
-        info($this->client);;
+        info($this->client->base_url);;
 
     }
 }
