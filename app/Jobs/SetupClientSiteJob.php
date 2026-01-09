@@ -24,18 +24,7 @@ class SetupClientSiteJob implements ShouldQueue
 
     public function handle(): void
     {
-        info("inside the job handle");
-        $client = Clients::find($this->client);
+        info($this->client);;
 
-        if (! $client) {
-            info("Client পাওয়া যায়নি। ID: {$this->client}");
-            return;
-        }
-
-        $brandName = $client->brand_name;
-        $email     = $client->email;
-        $slug      = Str::slug($brandName);
-
-        info("Job চলছে: {$brandName} ({$email})");
     }
 }
