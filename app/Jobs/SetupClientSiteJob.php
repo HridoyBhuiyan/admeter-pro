@@ -4,26 +4,36 @@ namespace App\Jobs;
 
 use App\Models\Clients;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class SetupClientSiteJob implements ShouldQueue
 {
+    use Dispatchable, Queueable, SerializesModels;
 
-    public $client;
-    public function __construct($client)
+    public int $clientId;
+
+    public function __construct(int $clientId)
     {
-        $this->client = $client;
+        $this->clientId = $clientId;
     }
-
 
     public function handle(): void
     {
-        $brandName = $this->client->brand_name;
-        $email     = $this->client->email;
-        $slug      = \Str::slug($brandName);
+        $client = Clients::find($this->clientId);
 
-        \Log::info("Job running for client: {$brandName} ({$email})");
+        if (! $client) {
+            Log::error("Client পাওয়া যায়নি। ID: {$this->clientId}");
+            return;
+        }
 
+        $brandName = $client->brand_name;
+        $email     = $client->email;
+        $slug      = Str::slug($brandName);
 
+        Log::info("Job চলছে: {$brandName} ({$email})");
     }
 }
