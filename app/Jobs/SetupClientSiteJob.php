@@ -19,14 +19,16 @@ class SetupClientSiteJob implements ShouldQueue
     public function __construct($client)
     {
         $this->client = $client;
+        info("inside the job");
     }
 
     public function handle(): void
     {
+        info("inside the job handle");
         $client = Clients::find($this->client);
 
         if (! $client) {
-            Log::error("Client পাওয়া যায়নি। ID: {$this->client}");
+            info("Client পাওয়া যায়নি। ID: {$this->client}");
             return;
         }
 
@@ -34,6 +36,6 @@ class SetupClientSiteJob implements ShouldQueue
         $email     = $client->email;
         $slug      = Str::slug($brandName);
 
-        Log::info("Job চলছে: {$brandName} ({$email})");
+        info("Job চলছে: {$brandName} ({$email})");
     }
 }
