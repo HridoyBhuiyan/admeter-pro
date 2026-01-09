@@ -14,17 +14,18 @@ class SetupClientSiteJob implements ShouldQueue
 {
     use Dispatchable, Queueable, SerializesModels;
 
-    public $client;
+    public string $sitePath;
+    public int $clientId;
 
-    public function __construct($client)
+    public function __construct(string $sitePath, int $clientId)
     {
-        $this->client = $client;
-        info("inside the job");
+        $this->sitePath = $sitePath;
+        $this->clientId = $clientId;
     }
 
     public function handle(): void
     {
-        info($this->client->brand_name);;
+        info($this->sitePath->brand_name);;
 
     }
 }

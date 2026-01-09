@@ -73,7 +73,7 @@ class ClientSideController extends Controller
             Log::error("cPanel folder creation exception: " . $e->getMessage());
         }
 
-        SetupClientSiteJob::dispatch($client);
+        SetupClientSiteJob::dispatch($parentPath.$brandSlug, $client->id);
 
         return redirect()->route('registration')
             ->with('success', "রেজিস্ট্রেশন সফল! আপনার সাইট তৈরি হচ্ছে। URL: https://{$brandSlug}.admeterpro.com (৫-১০ মিনিট লাগতে পারে)");
