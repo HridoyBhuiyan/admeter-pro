@@ -14,19 +14,19 @@ class SetupClientSiteJob implements ShouldQueue
 {
     use Dispatchable, Queueable, SerializesModels;
 
-    public int $clientId;
+    public $client;
 
-    public function __construct($clientId)
+    public function __construct($client)
     {
-        $this->clientId = $clientId;
+        $this->client = $client;
     }
 
     public function handle(): void
     {
-        $client = Clients::find($this->clientId);
+        $client = Clients::find($this->client);
 
         if (! $client) {
-            Log::error("Client পাওয়া যায়নি। ID: {$this->clientId}");
+            Log::error("Client পাওয়া যায়নি। ID: {$this->client}");
             return;
         }
 
