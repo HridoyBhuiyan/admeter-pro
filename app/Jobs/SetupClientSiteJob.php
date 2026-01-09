@@ -10,70 +10,119 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Storage;
-use Symfony\Component\Process\Process;
+use Illuminate\Support\Str;
 use Symfony\Component\Process\Exception\ProcessFailedException;
+use Symfony\Component\Process\Process;
 
 class SetupClientSiteJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
     public $timeout = 600;
-    public $tries = 2;
+    public $tries = 3;
 
-    protected $client;
+    protected Clients $client;
 
+    /**
+     * Absolute git path (IMPORTANT for queue workers)
+     */
+    private string $gitBinary = '/usr/bin/git';
 
     public function __construct(Clients $client)
     {
         $this->client = $client;
     }
 
-
     public function handle(): void
     {
-        $brandSlug = \Str::slug($this->client->brand_name);
-        $parentPath = DB::table('configs')->where('key', 'parent_path')->value('value');
+        $brandSlug = Str::slug($this->client->brand_name);
 
-        $clientFolderPath = rtrim($parentPath, '/') . '/' . $brandSlug;
+        $parentPath = DB::table('configs')
+            ->where('key', 'parent_path')
+            ->value('value');
 
-        if (!is_dir($clientFolderPath)) {
-            Log::error("Client folder not found: {$clientFolderPath}");
+        if (!$parentPath) {
+            Log::error('[SetupClientSiteJob] parent_path not found in configs table');
             return;
         }
 
-        Log::info("Starting site setup for client: {$this->client->brand_name} ({$brandSlug})");
+        $clientFolderPath = rtrim($parentPath, '/') . '/' . $brandSlug;
+
+        Log::info("[SetupClientSiteJob] Started for {$this->client->brand_name}");
+        Log::info("[SetupClientSiteJob] Target path: {$clientFolderPath}");
+
+        // Folder existence check
+        if (!is_dir($clientFolderPath)) {
+            Log::error("[SetupClientSiteJob] Folder does not exist: {$clientFolderPath}");
+            return;
+        }
+
+        // Writable check
+        if (!is_writable($clientFolderPath)) {
+            Log::error("[SetupClientSiteJob] Folder is not writable: {$clientFolderPath}");
+            return;
+        }
 
         try {
-            chdir($clientFolderPath);
-            $this->runCommand(['git', 'init']);
-            Log::info("Git initialized in {$clientFolderPath}");
+            // Verify git exists
+            $this->runCommand(['/usr/bin/which', 'git'], $clientFolderPath);
 
-            $repoUrl = 'https://github.com/HridoyBhuiyan/adpulse-dev.git';
+            // Initialize git only if not already initialized
+            if (!is_dir($clientFolderPath . '/.git')) {
+                $this->runCommand([$this->gitBinary, 'init'], $clientFolderPath);
+            } else {
+                Log::info('[SetupClientSiteJob] Git already initialized');
+            }
 
-            $this->runCommand(['git', 'remote', 'add', 'origin', $repoUrl]);
-            $this->runCommand(['git', 'pull', 'origin', 'main', '--depth=1']);
+            $gitUrl = DB::table('configs')
+                ->where('key', 'git_url')
+                ->value('value');
 
-            Log::info("Successfully pulled code from adpulse-dev into {$clientFolderPath}");
+            if (!$gitUrl) {
+                Log::error('[SetupClientSiteJob] git_url not found in configs table');
+                return;
+            }
 
+            // Make job retry-safe
+            $this->runCommand([$this->gitBinary, 'remote', 'remove', 'origin'], $clientFolderPath, false);
+            $this->runCommand([$this->gitBinary, 'remote', 'add', 'origin', $gitUrl], $clientFolderPath);
 
-        } catch (\Exception $e) {
-            Log::error("SetupClientSiteJob failed for {$brandSlug}: " . $e->getMessage());
-            throw $e;
+            // Pull code
+            $this->runCommand([
+                $this->gitBinary,
+                'pull',
+                'origin',
+                'main',
+                '--depth=1'
+            ], $clientFolderPath);
+
+            Log::info("[SetupClientSiteJob] Repository pulled successfully");
+
+        } catch (\Throwable $e) {
+            Log::error('[SetupClientSiteJob] FAILED');
+            Log::error($e->getMessage());
+            Log::error($e->getTraceAsString());
+
+            throw $e; // important for retries
         }
     }
 
-
-    private function runCommand(array $command): void
+    /**
+     * Run shell command safely with logs
+     */
+    private function runCommand(array $command, string $workingDir, bool $throwOnFail = true): void
     {
-        $process = new Process($command);
+        $process = new Process($command, $workingDir);
         $process->setTimeout(300);
         $process->run();
 
-        if (!$process->isSuccessful()) {
+        Log::info('[CMD] ' . implode(' ', $command));
+        Log::info('[STDOUT] ' . trim($process->getOutput()));
+        Log::error('[STDERR] ' . trim($process->getErrorOutput()));
+
+        if ($throwOnFail && !$process->isSuccessful()) {
             throw new ProcessFailedException($process);
         }
-
-        Log::info('Command Output: ' . $process->getOutput());
     }
 }
+
