@@ -16,7 +16,7 @@ class SetupClientSiteJob implements ShouldQueue
 
     public int $clientId;
 
-    public function __construct(int $clientId)
+    public function __construct($clientId)
     {
         $this->clientId = $clientId;
     }
