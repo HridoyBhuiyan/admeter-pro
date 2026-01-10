@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Jobs\SetupClientSiteJob;
 use App\Models\Clients;
+use App\Services\ClientSiteService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Http;
@@ -20,7 +21,7 @@ class ClientSideController extends Controller
     {
         return view('register.register');
     }
-    public function store(Request $request)
+    public function store(Request $request, ClientSiteService $service)
     {
         $request->validate([
             'name' => 'required|string|max:55|regex:/^[\pL\s\-]+$/u',
@@ -73,7 +74,7 @@ class ClientSideController extends Controller
             Log::error("cPanel folder creation exception: " . $e->getMessage());
         }
 
-        SetupClientSiteJob::dispatch($parentPath.$brandSlug, $client->id);
+        $service->setupSite($parentPath.$brandSlug, $client->id);
 
         return redirect()->route('registration')
             ->with('success', "রেজিস্ট্রেশন সফল! আপনার সাইট তৈরি হচ্ছে। URL: https://{$brandSlug}.admeterpro.com (৫-১০ মিনিট লাগতে পারে)");
