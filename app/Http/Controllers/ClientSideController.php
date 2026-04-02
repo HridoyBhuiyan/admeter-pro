@@ -6,9 +6,6 @@ use App\Jobs\SetupClientSiteJob;
 use App\Models\Clients;
 use App\Services\ClientSiteService;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class ClientSideController extends Controller
@@ -21,7 +18,7 @@ class ClientSideController extends Controller
     {
         return view('register.register');
     }
-    public function store(Request $request, ClientSiteService $service)
+    public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:55|regex:/^[\pL\s\-]+$/u',
@@ -46,38 +43,9 @@ class ClientSideController extends Controller
             'phone'      => $request['phone'],
         ]);
 
-        try {
-            $cpanelHost   = str_replace(['https://', 'http://'], '', \DB::table('configs')->where('key', 'cpanel_address')->value('value'));
-            $cpanelUser   = DB::table('configs')->where('key', 'cpanel_username')->value('value');
-            $apiToken     = DB::table('configs')->where('key', 'api_token')->value('value');
-            $port         = DB::table('configs')->where('key', 'port')->value('value') ?? 2083;
-            $parentPath   = DB::table('configs')->where('key', 'parent_path')->value('value');
-
-            $folderParent = $parentPath;
-
-            $url = "https://{$cpanelHost}:{$port}/json-api/cpanel?"
-                . http_build_query([
-                    'cpanel_jsonapi_user'       => $cpanelUser,
-                    'cpanel_jsonapi_apiversion' => 2,
-                    'cpanel_jsonapi_module'     => 'Fileman',
-                    'cpanel_jsonapi_func'       => 'mkdir',
-                    'path'                      => $folderParent,
-                    'name'                      => $brandSlug,
-                    'permissions'               => '0755',
-                ]);
-
-            $response = Http::withHeaders([
-                'Authorization' => "cpanel {$cpanelUser}:{$apiToken}",
-            ])->get($url);
-
-        } catch (\Exception $e) {
-            Log::error("cPanel folder creation exception: " . $e->getMessage());
-        }
-
-        $service->setupSite($parentPath.$brandSlug, $client->id);
 
         return redirect()->route('registration')
-            ->with('success', "রেজিস্ট্রেশন সফল! আপনার সাইট তৈরি হচ্ছে। URL: https://{$brandSlug}.admeterpro.com (৫-১০ মিনিট লাগতে পারে)");
+            ->with('success', "রেজিস্ট্রেশন সফল!");
     }
 
 }

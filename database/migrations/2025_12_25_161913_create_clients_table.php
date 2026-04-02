@@ -17,6 +17,8 @@ return new class extends Migration
             $table->boolean('trial')->default(true);
             $table->string('brand_slug')->unique()->nullable();
             $table->string('site_url')->nullable();
+            $table->string('ip_address', 45)->nullable();
+            $table->integer('last_activity')->index();
             $table->enum('status', ['pending', 'processing', 'completed', 'failed'])->default('pending');
             $table->timestamps();
         });
