@@ -16,7 +16,7 @@ class Clients extends Model
         'ip_address',
         'last_activity',
         'trial',
-        'country',
+        'region',
         'city',
         'site_url',
         'status'

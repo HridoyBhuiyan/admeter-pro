@@ -43,7 +43,7 @@ class ClientSideController extends Controller
         $city    = $location->cityName ?? null;
 
 
-        return Clients::create([
+        Clients::create([
             'name'       => $request['name'],
             'brand_name' => $request['brandName'],
             'email'      => $request['email'],
