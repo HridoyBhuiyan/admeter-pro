@@ -37,7 +37,7 @@ class ClientSideController extends Controller
 
         $brandSlug = Str::slug($request['brandName']);
         $ip = $request->ip();
-        $location = Location::get("45.120.99.251");
+        $location = Location::get($ip);
 
         $region = $location->regionName ?? null;
         $city    = $location->cityName ?? null;
