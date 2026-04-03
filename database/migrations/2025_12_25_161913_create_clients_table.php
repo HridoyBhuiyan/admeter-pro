@@ -21,6 +21,7 @@ return new class extends Migration
             $table->timestamp('last_activity', 6)->index();
             $table->string('region')->nullable();
             $table->string('city')->nullable();
+            $table->text('user_agent')->nullable();
             $table->enum('status', ['pending', 'processing', 'completed', 'failed'])->default('pending');
             $table->timestamps();
         });

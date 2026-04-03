@@ -51,6 +51,7 @@ class ClientSideController extends Controller
             'trial'      => 1,
             'ip_address'=> $ip,
             'region' => $region,
+            'user_agent'=> $request->userAgent(),
             'city' => $city,
             'last_activity' => now(),
             'brand_slug' => $brandSlug,

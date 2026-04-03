@@ -19,6 +19,7 @@ class Clients extends Model
         'region',
         'city',
         'site_url',
+        'user_agent',
         'status'
     ];
 }
