@@ -12,8 +12,12 @@ class Clients extends Model
         'brand_name',
         'brand_slug',
         'email',
-        'phone',
+        'whatsapp',
+        'ip_address',
+        'last_activity',
         'trial',
+        'country',
+        'city',
         'site_url',
         'status'
     ];

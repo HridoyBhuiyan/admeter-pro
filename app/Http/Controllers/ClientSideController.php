@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Jobs\SetupClientSiteJob;
 use App\Models\Clients;
-use App\Services\ClientSiteService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+use Stevebauman\Location\Facades\Location;
 
 class ClientSideController extends Controller
 {
@@ -18,31 +17,45 @@ class ClientSideController extends Controller
     {
         return view('register.register');
     }
+
+    /**
+     * @throws \Exception
+     */
     public function store(Request $request)
     {
         $request->validate([
             'name' => 'required|string|max:55|regex:/^[\pL\s\-]+$/u',
             'brandName' => 'required|string|max:55|unique:clients,brand_name',
-            'phone' => 'required|max:55|unique:clients,phone',
+            'whatsapp' => 'required|max:55|unique:clients,whatsapp',
             'email' => 'required|email|max:255|unique:clients,email',
         ], [
             'name.regex' => 'Only Full Name Allowed',
             'brandName.unique' => 'This Brand Name Already Exist. Please Try Another Name',
-            'phone.unique' => 'This Phone Number Already Exist. Please Try Another Number',
+            'whatsapp.unique' => 'This WhatsApp Number Already Exist. Please Try Another Number',
             'email.unique' => 'This Email Already Exist. Please Try Another Email',
         ]);
 
-
-
         $brandSlug = Str::slug($request['brandName']);
+        $ip = $request->ip();
+        $location = Location::get("45.120.99.251");
 
-        $client = Clients::create([
+        $region = $location->regionName ?? null;
+        $city    = $location->cityName ?? null;
+
+
+        return Clients::create([
             'name'       => $request['name'],
             'brand_name' => $request['brandName'],
             'email'      => $request['email'],
-            'phone'      => $request['phone'],
+            'whatsapp'      => $request['whatsapp'],
+            'trial'      => 1,
+            'ip_address'=> $ip,
+            'region' => $region,
+            'city' => $city,
+            'last_activity' => now(),
+            'brand_slug' => $brandSlug,
+            'status'     => 'pending',
         ]);
-
 
         return redirect()->route('registration')
             ->with('success', "রেজিস্ট্রেশন সফল!");

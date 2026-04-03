@@ -13,12 +13,14 @@ return new class extends Migration
             $table->string('name');
             $table->string('brand_name')->unique();
             $table->string('email')->unique();
-            $table->string('phone')->unique();
+            $table->string('whatsapp')->unique();
             $table->boolean('trial')->default(true);
             $table->string('brand_slug')->unique()->nullable();
             $table->string('site_url')->nullable();
             $table->string('ip_address', 45)->nullable();
-            $table->integer('last_activity')->index();
+            $table->timestamp('last_activity', 6)->index();
+            $table->string('region')->nullable();
+            $table->string('city')->nullable();
             $table->enum('status', ['pending', 'processing', 'completed', 'failed'])->default('pending');
             $table->timestamps();
         });

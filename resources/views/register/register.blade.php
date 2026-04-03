@@ -82,7 +82,7 @@
                                 <label class="block text-sm font-medium text-gray-700 mb-2">
                                     <x-iconoir-whatsapp-solid class="text-green-500 w-5 h-5 inline-block"/>
                                     WhatsApp Number<span class="text-red-500">*</span></label>
-                                <input name="phone" type="tel" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="+880 1***** ****">
+                                <input name="whatsapp" type="tel" required class="w-full p-3 rounded-xl border border-gray-300 focus:border-green-500 focus:ring-4 focus:ring-green-100 transition" placeholder="+880 1***** ****">
                             </div>
 
 
