@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Clients extends Model
 {
     protected $table = 'clients';
+
     protected $fillable = [
         'name',
         'brand_name',
@@ -21,5 +22,10 @@ class Clients extends Model
         'site_url',
         'user_agent',
         'status'
+    ];
+
+    protected $casts = [
+        'last_activity' => 'datetime',
+        'trial' => 'boolean',
     ];
 }
