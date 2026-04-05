@@ -1,7 +1,10 @@
 import Dropdown from '@/Components/Dropdown';
 import ResponsiveNavLink from '@/Components/ResponsiveNavLink';
 import { Head, Link, usePage } from '@inertiajs/react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+
+const SIDEBAR_COOKIE_NAME = 'admeter_sidebar_collapsed';
+const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 10;
 
 const navigationItems = [
     {
@@ -50,19 +53,70 @@ export default function AuthenticatedLayout({ header, children }) {
     const user = usePage().props.auth.user;
     const [showingNavigationDropdown, setShowingNavigationDropdown] =
         useState(false);
+    const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false);
+
+    useEffect(() => {
+        const sidebarCookie = document.cookie
+            .split('; ')
+            .find((cookie) => cookie.startsWith(`${SIDEBAR_COOKIE_NAME}=`));
+
+        if (!sidebarCookie) {
+            return;
+        }
+
+        const value = sidebarCookie.split('=')[1];
+        setIsSidebarCollapsed(value === '1');
+    }, []);
+
+    useEffect(() => {
+        document.cookie = `${SIDEBAR_COOKIE_NAME}=${isSidebarCollapsed ? '1' : '0'}; max-age=${SIDEBAR_COOKIE_MAX_AGE}; path=/; SameSite=Lax`;
+    }, [isSidebarCollapsed]);
 
     return (
         <div className="min-h-screen bg-slate-100">
             <Head />
 
             <div className="flex min-h-screen flex-col lg:flex-row">
-                <aside className="w-full border-b border-slate-200 bg-white lg:min-h-screen lg:w-80 lg:border-b-0 lg:border-r">
+                <aside
+                    className={`w-full border-b border-slate-200 bg-white transition-all duration-300 lg:min-h-screen lg:border-b-0 lg:border-r ${
+                        isSidebarCollapsed ? 'lg:w-28' : 'lg:w-80'
+                    }`}
+                >
                     <div className="flex items-center justify-between px-5 py-5 lg:px-6">
-                        <Link href="/" className="flex items-center gap-4">
+                        <button
+                            type="button"
+                            onClick={() =>
+                                setIsSidebarCollapsed(
+                                    (previousState) => !previousState,
+                                )
+                            }
+                            className={`hidden transition lg:flex ${
+                                isSidebarCollapsed
+                                    ? 'justify-center'
+                                    : 'items-center gap-4'
+                            }`}
+                            aria-label="Toggle sidebar"
+                        >
+                            <img
+                                src={
+                                    isSidebarCollapsed
+                                        ? '/assets/photo/logo-icon.png'
+                                        : '/assets/photo/logo-regular.png'
+                                }
+                                alt="AdMeter Pro"
+                                className={`object-contain transition-all duration-300 ${
+                                    isSidebarCollapsed
+                                        ? 'h-12 w-12'
+                                        : 'h-12 w-auto max-w-[180px]'
+                                }`}
+                            />
+                        </button>
+
+                        <Link href="/" className="flex items-center gap-4 lg:hidden">
                             <img
                                 src="/assets/photo/logo-regular.png"
                                 alt="AdMeter Pro"
-                                className="h-full w-full object-contain"
+                                className="h-14 w-auto max-w-[180px] object-contain"
                             />
                         </Link>
 
@@ -108,11 +162,12 @@ export default function AuthenticatedLayout({ header, children }) {
                                     <Link
                                         key={item.label}
                                         href={route(item.href)}
+                                        title={isSidebarCollapsed ? item.label : undefined}
                                         className={`group flex items-center gap-3 rounded-2xl px-4 py-3 text-[15px] font-semibold transition ${
                                             active
                                                 ? 'bg-slate-800 text-white shadow-sm'
                                                 : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
-                                        }`}
+                                        } ${isSidebarCollapsed ? 'lg:justify-center lg:px-3' : ''}`}
                                     >
                                         <span
                                             className={`flex h-10 w-10 items-center justify-center rounded-xl transition ${
@@ -123,22 +178,52 @@ export default function AuthenticatedLayout({ header, children }) {
                                         >
                                             {item.icon}
                                         </span>
-                                        <span>{item.label}</span>
+                                        <span
+                                            className={`${
+                                                isSidebarCollapsed
+                                                    ? 'lg:hidden'
+                                                    : ''
+                                            }`}
+                                        >
+                                            {item.label}
+                                        </span>
                                     </Link>
                                 );
                             })}
                         </div>
 
-                        <div className="mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4 lg:mt-10">
-                            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-                                Signed in as
-                            </p>
-                            <p className="mt-2 text-base font-semibold text-slate-900">
-                                {user.name}
-                            </p>
-                            <p className="mt-1 break-all text-sm text-slate-500">
-                                {user.email}
-                            </p>
+                        <div
+                            className={`mt-8 rounded-3xl border border-slate-200 bg-slate-50 p-4 lg:mt-10 ${
+                                isSidebarCollapsed ? 'lg:px-2 lg:py-3' : ''
+                            }`}
+                        >
+                            <div
+                                className={`${
+                                    isSidebarCollapsed ? 'lg:hidden' : ''
+                                }`}
+                            >
+                                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+                                    Signed in as
+                                </p>
+                                <p className="mt-2 text-base font-semibold text-slate-900">
+                                    {user.name}
+                                </p>
+                                <p className="mt-1 break-all text-sm text-slate-500">
+                                    {user.email}
+                                </p>
+                            </div>
+
+                            <div
+                                className={`hidden ${
+                                    isSidebarCollapsed
+                                        ? 'lg:flex lg:justify-center'
+                                        : ''
+                                }`}
+                            >
+                                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-800 text-sm font-semibold uppercase text-white">
+                                    {user.name?.slice(0, 2)}
+                                </div>
+                            </div>
 
                             <div className="mt-4 hidden lg:block">
                                 <Dropdown>
@@ -146,11 +231,27 @@ export default function AuthenticatedLayout({ header, children }) {
                                         <span className="inline-flex w-full rounded-2xl">
                                             <button
                                                 type="button"
-                                                className="inline-flex w-full items-center justify-between rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-slate-800 focus:outline-none"
+                                                className={`inline-flex w-full items-center rounded-2xl border border-slate-200 bg-white text-sm font-medium text-slate-600 shadow-sm transition hover:border-slate-300 hover:text-slate-800 focus:outline-none ${
+                                                    isSidebarCollapsed
+                                                        ? 'justify-center px-3 py-3'
+                                                        : 'justify-between px-4 py-3'
+                                                }`}
                                             >
-                                                Account
+                                                <span
+                                                    className={`${
+                                                        isSidebarCollapsed
+                                                            ? 'hidden'
+                                                            : ''
+                                                    }`}
+                                                >
+                                                    Account
+                                                </span>
                                                 <svg
-                                                    className="h-4 w-4"
+                                                    className={`h-4 w-4 ${
+                                                        isSidebarCollapsed
+                                                            ? ''
+                                                            : ''
+                                                    }`}
                                                     xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 20 20"
                                                     fill="currentColor"
@@ -226,7 +327,15 @@ export default function AuthenticatedLayout({ header, children }) {
                     </header>
 
                     <main className="flex-1 p-4 sm:p-6 lg:p-8">
-                        <div className="mx-auto max-w-7xl">{children}</div>
+                        <div
+                            className={`mx-auto transition-all duration-300 ${
+                                isSidebarCollapsed
+                                    ? 'max-w-[96rem]'
+                                    : 'max-w-7xl'
+                            }`}
+                        >
+                            {children}
+                        </div>
                     </main>
                 </div>
             </div>

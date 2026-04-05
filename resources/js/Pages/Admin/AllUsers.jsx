@@ -76,19 +76,15 @@ export default function AllUsers({ clients }) {
                             <table className="min-w-[1500px] divide-y divide-slate-200 text-left">
                                 <thead className="bg-slate-50">
                                     <tr className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-500">
-                                        <th className="px-5 py-4">Name</th>
-                                        <th className="px-5 py-4">Brand Name</th>
-                                        <th className="px-5 py-4">Brand Slug</th>
-                                        <th className="px-5 py-4">Email</th>
-                                        <th className="px-5 py-4">WhatsApp</th>
-                                        <th className="px-5 py-4">IP Address</th>
-                                        <th className="px-5 py-4">Last Activity</th>
-                                        <th className="px-5 py-4">Trial</th>
-                                        <th className="px-5 py-4">Region</th>
-                                        <th className="px-5 py-4">City</th>
-                                        <th className="px-5 py-4">Site URL</th>
-                                        <th className="px-5 py-4">User Agent</th>
-                                        <th className="px-5 py-4">Status</th>
+                                        <th className="px-3 py-3">Name</th>
+                                        <th className="px-3 py-3">Brand Name</th>
+                                        <th className="px-3 py-3">Status</th>
+                                        <th className="px-3 py-3">Email</th>
+                                        <th className="px-3 py-3">WhatsApp</th>
+                                        <th className="px-3 py-3">IP Address</th>
+                                        <th className="px-3 py-3">Last Activity</th>
+                                        <th className="px-3 py-3">Location</th>
+                                        <th className="px-3 py-3">User Agent</th>
                                     </tr>
                                 </thead>
 
@@ -99,20 +95,28 @@ export default function AllUsers({ clients }) {
                                                 key={client.id}
                                                 className="align-top text-sm text-slate-700 transition hover:bg-slate-50/80"
                                             >
-                                                <td className="px-5 py-5 font-semibold whitespace-nowrap text-slate-900">
-                                                    {fallback(client.name)}
+                                                <td className="px-3 py-3 flex font-semibold whitespace-nowrap text-slate-900">
+                                                    <Link href={`/user-details/${client.id}`} className="flex items-center gap-2">
+                                                    <img className={'w-3.5 mr-1 rounded-full'} src={`https://api.dicebear.com/7.x/initials/svg?seed=${client.name}`} />
+                                                    <span>{fallback(client.name)}</span>
+                                                    </Link>
                                                 </td>
-                                                <td className="px-5 py-5 whitespace-nowrap">
-                                                    {fallback(client.brand_name)}
+                                                <td className="px-3 py-3 whitespace-nowrap">
+                                                        <a href={`${client.brand_slug}`} target={'_blank'} rel="noopener noreferrer">{fallback(client.brand_name)}</a>
                                                 </td>
-                                                <td className="px-5 py-5">
-                                                    <span className="inline-flex whitespace-nowrap rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-600">
-                                                        {fallback(
-                                                            client.brand_slug,
-                                                        )}
+                                                <td className="px-3 whitespace-nowrap py-3">
+                                                    <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${client.trial
+                                                        ? 'bg-emerald-50 text-emerald-700'
+                                                        : 'bg-rose-50 text-rose-700'
+                                                    }`}>
+                                                        {client.trial ? 'Trial' : 'Regular'}
+                                                    </span>
+                                                    <span className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold capitalize ${statusClassName(client.status)}`}>
+                                                        {fallback(client.status)}
                                                     </span>
                                                 </td>
-                                                <td className="px-5 py-5 whitespace-nowrap">
+
+                                                <td className="px-3 py-3 whitespace-nowrap">
                                                     <a
                                                         href={`mailto:${client.email}`}
                                                         className="text-sky-700  transition hover:text-sky-900 hover:underline"
@@ -120,7 +124,7 @@ export default function AllUsers({ clients }) {
                                                         {fallback(client.email)}
                                                     </a>
                                                 </td>
-                                                <td className="px-5 py-5 whitespace-nowrap">
+                                                <td className="px-3 py-3 whitespace-nowrap">
                                                     {buildWhatsAppUrl(
                                                         client.whatsapp,
                                                     ) ? (
@@ -141,64 +145,26 @@ export default function AllUsers({ clients }) {
                                                         )
                                                     )}
                                                 </td>
-                                                <td className="px-5 py-5 whitespace-nowrap font-medium text-slate-600">
+                                                <td className="px-3 py-3 whitespace-nowrap font-medium text-slate-600">
                                                     {fallback(
                                                         client.ip_address,
                                                     )}
                                                 </td>
-                                                <td className="px-5 py-5 whitespace-nowrap text-slate-600">
+                                                <td className="px-3 py-3 whitespace-nowrap text-slate-600">
                                                     {formatBangladeshTime(
                                                         client.last_activity,
                                                     )}
                                                 </td>
-                                                <td className="px-5 whitespace-nowrap py-5">
-                                                    <span
-                                                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold ${
-                                                            client.trial
-                                                                ? 'bg-emerald-50 text-emerald-700'
-                                                                : 'bg-rose-50 text-rose-700'
-                                                        }`}
-                                                    >
-                                                        {client.trial
-                                                            ? 'Yes'
-                                                            : 'No'}
-                                                    </span>
+
+                                                <td className="px-3 whitespace-nowrap py-3">
+                                                    {fallback(client.region)}, {fallback(client.city)}
                                                 </td>
-                                                <td className="px-5 whitespace-nowrap py-5">
-                                                    {fallback(client.region)}
-                                                </td>
-                                                <td className="px-5 whitespace-nowrap py-5">
-                                                    {fallback(client.city)}
-                                                </td>
-                                                <td className="px-5 whitespace-nowrap py-5">
-                                                    {client.site_url ? (
-                                                        <a
-                                                            href={client.site_url}
-                                                            target="_blank"
-                                                            rel="noreferrer"
-                                                            className="text-sky-700 transition hover:text-sky-900 hover:underline"
-                                                        >
-                                                            {client.site_url}
-                                                        </a>
-                                                    ) : (
-                                                        'N/A'
-                                                    )}
-                                                </td>
-                                                <td className="max-w-xs whitespace-nowrap px-5 py-5 text-slate-500">
+                                                <td className="max-w-xs whitespace-nowrap px-3 py-3 text-slate-500">
                                                     <p className="line-clamp-2">
                                                         {fallback(
                                                             client.user_agent,
                                                         )}
                                                     </p>
-                                                </td>
-                                                <td className="px-5 whitespace-nowrap py-5">
-                                                    <span
-                                                        className={`inline-flex rounded-full px-3 py-1 text-xs font-semibold capitalize ${statusClassName(client.status)}`}
-                                                    >
-                                                        {fallback(
-                                                            client.status,
-                                                        )}
-                                                    </span>
                                                 </td>
                                             </tr>
                                         ))

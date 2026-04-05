@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ClientDueModel;
 use App\Models\Clients;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
@@ -43,7 +44,7 @@ class ClientSideController extends Controller
         $city    = $location->cityName ?? null;
 
 
-        Clients::create([
+        $client = Clients::create([
             'name'       => $request['name'],
             'brand_name' => $request['brandName'],
             'email'      => $request['email'],
@@ -57,6 +58,12 @@ class ClientSideController extends Controller
             'brand_slug' => $brandSlug,
             'status'     => 'pending',
         ]);
+
+        ClientDueModel::create([
+            "client_id"=>$client->id,
+            "due_amount"=>0,
+        ]);
+
 
         return redirect()->route('registration')
             ->with('success', "রেজিস্ট্রেশন সফল!");

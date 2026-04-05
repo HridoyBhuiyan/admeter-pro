@@ -15,12 +15,12 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     Route::get('/all-user', [AllUserController::class, 'index'])->name('all.user');
+    Route::get('/user-details/{id}', [AllUserController::class, 'details'])->name('single.user.details');
 });
 
 require __DIR__.'/auth.php';

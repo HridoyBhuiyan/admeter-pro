@@ -19,4 +19,10 @@ class AllUserController extends Controller
             'clients' => $clients,
         ]);
     }
+
+
+    public function details($id)
+    {
+        return Inertia::render('Admin/ClientDetails');
+    }
 }
